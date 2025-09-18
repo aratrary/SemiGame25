@@ -1,6 +1,7 @@
 1.characterportrait는 대화창용 작은 초상화
 2.대화창 나와야 할 오브젝트에 DialogueTrigger 붙이기
 3.대화 대본은  dialoguedata에(어떻게 쓰는진 아직 모름)
+ㄴ 캐릭터 초상화, 대본, 필요하면 분기점까지
 4.ChoiceButton은 차차 추가해야됨
 5. 플레이어 설정 (필수)
 플레이어 오브젝트에:
