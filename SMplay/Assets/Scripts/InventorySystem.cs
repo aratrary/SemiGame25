@@ -46,7 +46,7 @@ public class InventoryManager : MonoBehaviour
         // 게임 시작 시 테스트용 아이템 몇 개 추가
         AddItem("철", testItemIcon1, 1);
         AddItem("여고 리모콘", testItemIcon2, 1);
-        AddItem("앤디안경", testItemIcon3, 10);
+        AddItem("앤디안경", testItemIcon3, 1);
         AddItem("철", testItemIcon1, 1); // 같은 아이템 추가 시 수량 증가 로직 (AddItem 함수에 포함)
     }
 
