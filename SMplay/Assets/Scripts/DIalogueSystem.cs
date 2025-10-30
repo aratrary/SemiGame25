@@ -9,6 +9,8 @@ using TMPro;
 /// 타이핑 효과, 대화 진행, UI 제어 등을 담당
 /// </summary>
 /// sex
+
+
 public class DialogueSystem : MonoBehaviour
 {
     #region UI 참조 변수들
@@ -36,11 +38,13 @@ public class DialogueSystem : MonoBehaviour
     /// 타이핑 완료 후에만 활성화됨
     /// </summary>
     public GameObject continueIndicator;
-    
+
     /// <summary>
     /// 캐릭터 초상화를 표시하는 Image 컴포넌트 (선택사항)
     /// </summary>
     public Image characterPortrait;
+
+    public GameObject skillInventoryPanel;
     #endregion
     
     #region 대화 설정 변수들
@@ -84,6 +88,12 @@ public class DialogueSystem : MonoBehaviour
     /// 타이핑 중단 시 사용
     /// </summary>
     private Coroutine typingCoroutine;
+    private enum UIState { None, Dialogue, SkillInventory }
+    // ⭐ UI 상태 정의 ⭐
+    private UIState currentUIState = UIState.None; 
+    // ⭐ 현재 UI 상태 변수 ⭐
+    [Header("게임 대화 시퀀스 목록")]
+    public List<DialogueData> gameDialogueSequences = new List<DialogueData>();
     #endregion
     
     #region Unity 생명주기 메서드들
@@ -103,12 +113,19 @@ public class DialogueSystem : MonoBehaviour
         {
             continueIndicator.SetActive(false);
         }
-        
+
         // 초상화도 초기에는 숨김
         if (characterPortrait != null)
         {
             characterPortrait.gameObject.SetActive(false);
         }
+
+        currentUIState = UIState.None; // ⭐ 시작 시 UI 상태는 None ⭐
+
+        if (gameDialogueSequences.Count > 0)
+    {
+        StartDialogue(gameDialogueSequences[0]);
+    }
     }
     
     /// <summary>
@@ -122,6 +139,12 @@ public class DialogueSystem : MonoBehaviour
         {
             HandleSpacebarInput();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+    {
+        Debug.Log("T 키 눌림 감지!"); // ⭐ 임시로 추가하여 T 키 입력 자체를 확인해 보세요 ⭐
+        ToggleUIPanel();
+    }
         
         // ESC 키로 대화 강제 종료 (선택사항)
         if (dialogueActive && Input.GetKeyDown(KeyCode.Escape))
@@ -152,9 +175,12 @@ public class DialogueSystem : MonoBehaviour
             Debug.LogError("유효하지 않은 대화 데이터입니다!");
             return;
         }
-        
+
+
         // 대화 시스템 활성화
         dialogueActive = true;
+        if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 혹시 몰라 항상 끕니다.
+        currentUIState = UIState.Dialogue; // 대화 시작하면 무조건 대화창 상태
         
         // 대화창 패널 활성화 (화면에 표시)
         dialoguePanel.SetActive(true);
@@ -199,9 +225,11 @@ public class DialogueSystem : MonoBehaviour
         // 모든 상태 플래그 리셋
         dialogueActive = false;
         isTyping = false;
-        
+
         // UI 요소들 비활성화
         dialoguePanel.SetActive(false);
+        if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 확실히 끔
+        currentUIState = UIState.None; // 대화 종료하면 UI 상태는 None
         continueIndicator.SetActive(false);
         
         // 초상화 숨기기
@@ -389,7 +417,7 @@ public class DialogueSystem : MonoBehaviour
     {
         return dialogueActive;
     }
-    
+
     /// <summary>
     /// 남은 문장 수를 반환하는 메서드 (디버그용)
     /// </summary>
@@ -399,4 +427,61 @@ public class DialogueSystem : MonoBehaviour
         return sentences.Count;
     }
     #endregion
+    
+        /// <summary>
+    /// 'T' 키 입력에 따라 UI 패널들의 가시성 상태를 전환합니다.
+    /// 순환: None -> Dialogue -> SkillInventory -> None -> ... (또는 Dialogue -> SkillInventory -> Dialogue 로 순환)
+    /// </summary>
+    private void ToggleUIPanel()
+    {
+        Debug.Log("ToggleUIPanel 호출됨, 현재 UIState (진입시): " + currentUIState + ", dialogueActive: " + dialogueActive);
+
+        // 모든 UI 패널 일단 끄기 (여기서는 건드리지 않음)
+        //dialoguePanel.SetActive(false); // 이건 대화창이 꺼진 상태여도 유지해야 하므로, 밑에서 개별적으로 제어
+        //if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 이것도 마찬가지
+
+        // 현재 대화가 진행 중일 때만 UI 전환 로직을 수행
+        if (!dialogueActive)
+        {
+            // 대화가 진행 중이 아닐 때는 T를 눌러도 Skill/Inventory UI만 토글되게 하거나 아무것도 하지 않도록 할 수 있습니다.
+            // 여기서는 대화가 진행 중일 때만 'T' 키가 Dialogue와 SkillInventory를 전환하도록 만듭니다.
+            // 만약 대화와 무관하게 SkillInventory를 토글하고 싶다면 이 if문을 제거하고 로직을 수정해야 합니다.
+            // 우선은 대화 중에만 UI 전환이 되도록 가정합니다.
+
+            Debug.Log("대화가 진행 중이 아니라 UI 전환 로직을 건너뜁니다.");
+            return; // 대화가 진행 중이 아닐 때는 'T' 키가 UI 전환을 하지 않도록
+        }
+
+        // 현재 UI 상태에 따라 다음 상태 결정
+        switch (currentUIState)
+        {
+            case UIState.Dialogue: // 현재 대화창이 켜져 있었으면 스킬/인벤토리로
+                dialoguePanel.SetActive(false); // 대화창 끄기
+                if (skillInventoryPanel != null)
+                {
+                    skillInventoryPanel.SetActive(true); // 스킬/인벤토리 켜기
+                    currentUIState = UIState.SkillInventory;
+                }
+                else // 스킬/인벤토리 패널이 없으면 다시 Dialogue로 (순환)
+                {
+                    dialoguePanel.SetActive(true); // 대화창 켜기
+                    currentUIState = UIState.Dialogue;
+                }
+                break;
+
+            case UIState.SkillInventory: // 현재 스킬/인벤토리가 켜져 있었으면 대화창으로
+                if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 스킬/인벤토리 끄기
+                dialoguePanel.SetActive(true); // 대화창 켜기
+                currentUIState = UIState.Dialogue;
+                break;
+
+            default: // None 상태이거나 예측 불가능한 상태라면 기본적으로 대화창으로
+                dialoguePanel.SetActive(true);
+                if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 다른 UI는 끄고
+                currentUIState = UIState.Dialogue;
+                break;
+        }
+
+        Debug.Log("ToggleUIPanel 호출됨, 변경 후 UIState: " + currentUIState);
+    }
 }
