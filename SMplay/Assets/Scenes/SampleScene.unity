@@ -390,7 +390,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 06a47134b28fb974aa15601e38edfea7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -451,7 +451,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &544849149
 SpriteRenderer:
@@ -516,7 +516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544849146}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -536,12 +536,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxV: 7
-  StartJumppower: 9
-  Jumppower: 2
+  StartJumppower: 8
+  Jumppower: 1.5
   isGround: 0
   isJumping: 0
   bufferTime: 0.1
   coyoteTime: 0.08
+  mainCollider: {fileID: 544849147}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  groundDistance: 0.05
+  groundSkin: 0.02
+  minGroundNormalY: 0.6
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +644,7 @@ GameObject:
   - component: {fileID: 2030424458}
   - component: {fileID: 2030424457}
   - component: {fileID: 2030424459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +778,7 @@ GameObject:
   - component: {fileID: 2091073627}
   - component: {fileID: 2091073626}
   - component: {fileID: 2091073625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +912,7 @@ GameObject:
   - component: {fileID: 2099242546}
   - component: {fileID: 2099242545}
   - component: {fileID: 2099242544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
