@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
+
     [Header("이동 힘")]
     float Iv; // 좌우 키 입력
     public float maxV ; // 최대속도
@@ -13,7 +15,11 @@ public class Moving : MonoBehaviour
     public bool isGround; //땅에있음?
     public bool isJumping; //점프함?
     Rigidbody2D rigid;
+    SpriteRenderer sr;
     bool Ij; // 점프 인풋
+    int face = 1; // 바라보는 방향 좌 : -1, 우 : 1
+    public bool havingStick = true;
+    public bool throwableStick;
 
     [Header("버퍼시간, 코요태시간")]
     public float bufferTime; // 바닥판정 전 점프 눌러도 점프가 인정되는 시간
@@ -29,10 +35,19 @@ public class Moving : MonoBehaviour
     public float groundSkin; // 콜라이더 맨 밑바닥보단 조금 위에서 시작함
     public float minGroundNormalY; // 인식된 땅의 기울기 벡터 정도로 생각하셈
 
+    [Header("자스틱던지기")]
+
+    public GameObject jaStick;
+    public Stick stickscript;
+    public Transform playerbody;
+    public float stickspawnX;
+    public float stickspawnY;
+
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
 
         Jpower = Jumppower;
     }
@@ -40,9 +55,12 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        // ===============좌우이동=================    
         if ((Iv != 0) || (rigid.linearVelocityX != 0))
             rigid.linearVelocityX = Iv * maxV;
-            
+
+        // =================점프===================    
         if (Jumpkey) // 점프 받음
         {
             Jumpkey = false;
@@ -95,7 +113,13 @@ public class Moving : MonoBehaviour
             coyoteTimer -= Time.deltaTime;
         }
 
+
         isGround = CheckGrounded_BoxCast();
+
+        if (!havingStick)
+        {
+            throwableStick = false;
+        }
 
         if (isGround)
         {
@@ -108,8 +132,36 @@ public class Moving : MonoBehaviour
             {
                 Jpower = Jumppower;
             }
+
+            if (havingStick)
+            {
+                throwableStick = true;
+            }
         }
+
+
+        /* if (Input.GetAxisRaw("Horizontal") != 0)     // <- 입력으로 방향 바꾸기
+            face = (Input.GetAxisRaw("Horizontal") > 0) ? 1 : -1; */ 
+        if (rigid.linearVelocityX !=0)                  // <- 속도로 방향 바꾸기
+            face = (rigid.linearVelocityX > 0) ? 1 : -1;
+
+        sr.flipX = (face<0);
+
         
+        if(Input.GetButtonDown("Throw"))
+        {
+            if (throwableStick)
+            {
+                jaStick.transform.position = playerbody.position + new Vector3(stickspawnX * face, stickspawnY, 0);
+                jaStick.SetActive(true);
+                stickscript.Throwing(face);
+                havingStick = false;
+            }
+            else if (!havingStick)
+            {
+                stickscript.Returning();
+            }
+        }
     }
 
     private bool CheckGrounded_BoxCast()
