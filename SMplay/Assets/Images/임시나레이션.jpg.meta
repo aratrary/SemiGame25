@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 23f8db6402a3c6143959e20c7edd2397
+guid: 1780f9d3b1194c94692a64dacc33d575
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2642466268709067351
-    second: TempIron_0
-  - first:
-      213: 1480239287245293777
-    second: TempIron_1
-  - first:
-      213: 1787060427409180259
-    second: TempIron_2
+      213: 3463687063331491661
+    second: "\uC784\uC2DC\uB098\uB808\uC774\uC158_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TempIron_0
+      name: "\uC784\uC2DC\uB098\uB808\uC774\uC158_0"
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 1374
-        width: 181
-        height: 11
+        x: 0
+        y: 0
+        width: 299
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75a1b5d221deba420800000000000000
-      internalID: 2642466268709067351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TempIron_1
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 331
-        width: 1373
-        height: 1038
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d845d20acdda8410800000000000000
-      internalID: 1480239287245293777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TempIron_2
-      rect:
-        serializedVersion: 2
-        x: 419
-        y: 315
-        width: 349
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 366c1ef8df9ecc810800000000000000
-      internalID: 1787060427409180259
+      spriteID: d4f4dfe580d711030800000000000000
+      internalID: 3463687063331491661
       vertices: []
       indices: 
       edges: []
@@ -184,10 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      TempIron_0: 2642466268709067351
-      TempIron_1: 1480239287245293777
-      TempIron_2: 1787060427409180259
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
