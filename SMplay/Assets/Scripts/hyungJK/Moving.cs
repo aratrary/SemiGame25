@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
+
     [Header("이동 힘")]
     float Iv; // 좌우 키 입력
     public float maxV ; // 최대속도
@@ -16,8 +17,9 @@ public class Moving : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer sr;
     bool Ij; // 점프 인풋
-    bool face; // 바라보는 방향 좌 : -1, 우 : 1
+    int face = 1; // 바라보는 방향 좌 : -1, 우 : 1
     public bool havingStick = true;
+    public bool throwableStick;
 
     [Header("버퍼시간, 코요태시간")]
     public float bufferTime; // 바닥판정 전 점프 눌러도 점프가 인정되는 시간
@@ -37,6 +39,9 @@ public class Moving : MonoBehaviour
 
     public GameObject jaStick;
     public Stick stickscript;
+    public Transform playerbody;
+    public float stickspawnX;
+    public float stickspawnY;
 
 
     void Awake()
@@ -111,6 +116,11 @@ public class Moving : MonoBehaviour
 
         isGround = CheckGrounded_BoxCast();
 
+        if (!havingStick)
+        {
+            throwableStick = false;
+        }
+
         if (isGround)
         {
             if (coyoteTimer != coyoteTime)
@@ -122,21 +132,35 @@ public class Moving : MonoBehaviour
             {
                 Jpower = Jumppower;
             }
+
+            if (havingStick)
+            {
+                throwableStick = true;
+            }
         }
 
 
         /* if (Input.GetAxisRaw("Horizontal") != 0)     // <- 입력으로 방향 바꾸기
-            face = (Input.GetAxisRaw("Horizontal") < 0); */ 
+            face = (Input.GetAxisRaw("Horizontal") > 0) ? 1 : -1; */ 
         if (rigid.linearVelocityX !=0)                  // <- 속도로 방향 바꾸기
-            face = (rigid.linearVelocityX < 0);
+            face = (rigid.linearVelocityX > 0) ? 1 : -1;
 
-        sr.flipX = face;
+        sr.flipX = (face<0);
 
         
-        if(Input.GetButtonDown("Throw") && havingStick)
+        if(Input.GetButtonDown("Throw"))
         {
-            jaStick.SetActive(true);
-            stickscript.Throwing(face);
+            if (throwableStick)
+            {
+                jaStick.transform.position = playerbody.position + new Vector3(stickspawnX * face, stickspawnY, 0);
+                jaStick.SetActive(true);
+                stickscript.Throwing(face);
+                havingStick = false;
+            }
+            else if (!havingStick)
+            {
+                stickscript.Returning();
+            }
         }
     }
 
