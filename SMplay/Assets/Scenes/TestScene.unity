@@ -307,8 +307,17 @@ MonoBehaviour:
   dialogueText: {fileID: 2141469065}
   continueIndicator: {fileID: 1216244691}
   characterPortrait: {fileID: 456602731}
+  skillInventoryPanel: {fileID: 1185132118}
   typingSpeed: 0.02
   animationSpeed: 0.5
+  gameDialogueSequences:
+  - characterName: 
+    sentences: []
+  - characterName: Andy
+    sentences:
+    - "\uC548\uB155\uD558\uC138\uC694, \uC564\uB514\uC785\uB2C8\uB2E4."
+    - 45
+    characterPortrait: {fileID: 0}
 --- !u!4 &111036248
 Transform:
   m_ObjectHideFlags: 0
@@ -3078,9 +3087,12 @@ MonoBehaviour:
   m_text: 'Name
 
 '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8416a8f4a2b7c3441bdd627172eb0403, type: 2}
+  m_sharedMaterial: {fileID: -4443398910203279734, guid: 8416a8f4a2b7c3441bdd627172eb0403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3645,7 +3657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryGridParent: {fileID: 1733806258}
   inventorySlotPrefab: {fileID: 3811905021073798545, guid: d17945526cb93d746b1e976338d1eff7, type: 3}
-  testItemIcon1: {fileID: 2642466268709067351, guid: 23f8db6402a3c6143959e20c7edd2397, type: 3}
+  testItemIcon1: {fileID: -8952475645479145564, guid: d54afa07f123a9844989a207dc0c39b4, type: 3}
   testItemIcon2: {fileID: -2994548748243978429, guid: 5bfe71434cb20404c97991a093c010f3, type: 3}
   testItemIcon3: {fileID: 1962149074646623339, guid: 847aad7a63aaef842a5290b94e5d1599, type: 3}
 --- !u!4 &1861292419
@@ -4125,6 +4137,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8416a8f4a2b7c3441bdd627172eb0403, type: 2}
+  m_sharedMaterial: {fileID: -4443398910203279734, guid: 8416a8f4a2b7c3441bdd627172eb0403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
