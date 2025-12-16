@@ -8,7 +8,12 @@ public class MainSceneStart : MonoBehaviour
     {
         SceneManager.LoadScene(toScene);
     }
-    /* 개
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
+    /* 개... 뒤에할말이좀많은데안할거임 씨발
     public Camera caemura;
     private float duration = 0.5f; //떨어지는데 걸리는 시간(사실 저거보다 조금 더 오래걸림)
 
