@@ -11,15 +11,20 @@ public class Moving : MonoBehaviour
     public float StartJumppower; //점프 시작할때 힘
     public float Jumppower; // 점프 힘 초기화용
     float Jpower; //점프하는중에 작아지는 점프힘
+    public float Wingpower;
 
     [Header("판단bool")]
     public bool isGround; //땅에있음?
     public bool isJumping; //점프함?
     public bool isWinging;
     public bool isThrowing;
+    public bool isSitting1;
+    public bool isSitting2;
+    public bool havingWing;
+    public bool Wingable;
     Rigidbody2D rigid;
     SpriteRenderer sr;
-    public Animator anim;
+    Animator anim;
     public enum State { Throw, Catch, Sit_1, Sit_2, normal, run, Jump, Wing}
     bool Ij; // 점프 인풋
     int face = 1; // 바라보는 방향 좌 : -1, 우 : 1
@@ -31,6 +36,7 @@ public class Moving : MonoBehaviour
     public float bufferTime; // 바닥판정 전 점프 눌러도 점프가 인정되는 시간
     float bufferTimer; // 위에거 타이머
     bool Jumpkey = false; // 점프 실행시키는 트리거
+    bool Wingkey = false;
     public float coyoteTime; // 코요테 시간(모르면 검색ㄱㄱ 간단한거임)
     float coyoteTimer; // 위에거 타이머
 
@@ -87,6 +93,14 @@ public class Moving : MonoBehaviour
             isJumping = false; 
             //Debug.Log("simai");
         }
+        
+        if (Wingkey)
+        {
+            Wingkey = false;
+            rigid.gravityScale = 0.4f;
+            rigid.linearVelocityY = 0;
+            rigid.AddForce(Vector2.up * Wingpower, ForceMode2D.Impulse);
+        }
     }
     void Update()
     {
@@ -95,19 +109,26 @@ public class Moving : MonoBehaviour
         Ij = Input.GetButton("Jump");
         //Debug.Log(Input.GetButton("Jump"));
 
-        AnimationUpdate();
 
         if (Input.GetButtonDown("Jump")) // 키 누르는데 점프중 아님
         {
-            if (coyoteTimer > 0)
+            if (coyoteTimer > 0 || isGround)
             {
                 Jumpkey = true;
+            }
+            else if(Wingable && !isGround)
+            {
+                Wingkey = true;
+                Wingable = false;
             }
             else
             {
                 bufferTimer = bufferTime;
             }
         }
+
+        AnimationUpdate();
+
         if (bufferTimer > 0 && Input.GetButton("Jump")) // 점프키 누름 
         {
             bufferTimer -= Time.deltaTime; 
@@ -145,6 +166,14 @@ public class Moving : MonoBehaviour
             if (havingStick && !throwableStick)
             {
                 throwableStick = true;
+            }
+            if (!Wingable && havingWing)
+            {
+                Wingable = true;
+            }
+            if (rigid.gravityScale != 1)
+            {
+                rigid.gravityScale = 1;
             }
         }
 
@@ -185,7 +214,7 @@ public class Moving : MonoBehaviour
         }
         else if (!isGround)
         {
-            if (isWinging)
+            if (!Wingable)
                 ChangeAnim(State.Wing);
             else
                 ChangeAnim(State.Jump);
