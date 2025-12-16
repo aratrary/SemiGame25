@@ -3679,7 +3679,7 @@ MonoBehaviour:
       characterName: JK
       sentences:
       - "(\uC2EC\uD638\uD761)"
-      - "^\uC7A5\uD559\uD034\uC988 \uC870\uBCC4\uB531^"
+      - "\uC7A5\uD559\uD034\uC988 \uC870\uBCC4\uB531!!!!!!"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -4552,8 +4552,8 @@ MonoBehaviour:
       - "(\uC2DC\uBB34\uB8E9)"
       - "\uADF8\uB7FC \uB09C \uC5EC\uAE30\uC11C \uB9CC\uB4E0 emp\uD3ED\uD0C4\uACFC
         \uB0B4 \uCD5C\uACE0\uC758 \uAC78\uC791\uC778 \uCD1D\uC744 \uC8FC\uB9C8!"
-      - "\uC5D0 \uCC98\uC74C\uC73C\uB85C \uBC1C\uACAC\uB41C emp \uD604\uC0C1\uC758
-        \uC5F0\uC7A5\uC120\uC73C\uB85C\uC11C..."
+      - "emp\uD3ED\uD0C4\uC774\uB780 1962\uB144\uC5D0 \uCC98\uC74C\uC73C\uB85C \uBC1C\uACAC\uB41C
+        emp \uD604\uC0C1\uC758 \uC5F0\uC7A5\uC120\uC73C\uB85C\uC11C..."
       characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6043,7 +6043,7 @@ MonoBehaviour:
       - "\uBD81\uC77C\uACE0\uB294 '\uBC1C\uC804' \uC774 \uC5C6\uC5C8\uC2B5\uB2C8\uB2E4. "
       - "\uC608\uB97C\uB4E4\uC5B4... \uAD6C\uC2DC\uB300\uC801 \uC720\uBB3C\uC778
         '3\uD559\uB144 21\uC2DC \uC774\uD6C4 \uC678\uBC15', '\uC57C\uAC04\uC790\uC2B5
-        11\uC2DC 30\uBD84\uAE4C\uC9C0', \t\uAE30\uD0C0\uB4F1\uB4F1..."
+        11\uC2DC 30\uBD84\uAE4C\uC9C0', \uAE30\uD0C0\uB4F1\uB4F1..."
       characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6112,6 +6112,90 @@ MonoBehaviour:
       - "\uBD80\uC234\uBC84\uB9AC\uB294 \uC218\uBC16\uC5D0..."
       - "\uC18C\uAC1C\uD574\uB4DC\uB9AC\uC8E0. \uC81C \uCD5C\uC885\uBCD1\uAE30..."
       - "<\uB9C9\uC2DC\uBB34\uC2A4 The \uC544\uB2E8\uAD00>\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uADF8\uB7EC\uB098 \uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0 \uC54A\uC558\uB2E4"
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - ...
+      - "\uC544\uB9C8... emp\uD3ED\uD0C4\uB54C\uBB38\uC5D0 5\uCE35\uC758 \uC804\uC790\uAE30\uAE30\uB294
+        \uC791\uB3D9\uD558\uC9C0 \uC54A\uC744\uAC78\uC694?"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\u3131\u3161"
+      - "\uC2DC\uBC1C \uADF8\uB807\uB2E4\uBA74 \uB0B4 \uCC28\uC885\uBCD1\uAE30 <Andy
+        'the me' hwang>\uB2E4"
+      characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uADF8\uBB54\uC539"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uB098\uB2E4"
       characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
