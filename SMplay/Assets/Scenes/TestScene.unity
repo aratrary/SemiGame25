@@ -272,6 +272,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56707725}
   m_CullTransparentMesh: 1
+--- !u!1 &69160716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69160717}
+  - component: {fileID: 69160720}
+  - component: {fileID: 69160719}
+  - component: {fileID: 69160718}
+  m_Layer: 5
+  m_Name: "5\uCE35\uB3C4\uCC29"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &69160717
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69160716}
+  m_LocalRotation: {x: -0, y: 0.008521755, z: -0, w: 0.9999637}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1886487415}
+  m_Father: {fileID: 1257058304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.977, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 85, y: 202}
+  m_SizeDelta: {x: 426.179, y: 129.803}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &69160718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69160716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 69160719}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2086727728}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &69160719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69160716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &69160720
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69160716}
+  m_CullTransparentMesh: 1
 --- !u!1 &111036246
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 111036248}
   - component: {fileID: 111036247}
-  - component: {fileID: 111036249}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -302,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386a234c1d3f81d4383969ffe2cc47d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1069806087}
+  dialoguePanel: {fileID: 1254398734}
   characterNameText: {fileID: 1583946686}
   dialogueText: {fileID: 2141469065}
   continueIndicator: {fileID: 1216244691}
@@ -310,15 +442,7 @@ MonoBehaviour:
   skillInventoryPanel: {fileID: 1185132118}
   typingSpeed: 0.02
   animationSpeed: 0.5
-  gameDialogueSequences:
-  - characterName: 
-    sentences: []
-    characterPortrait: {fileID: 0}
-  - characterName: Andy
-    sentences:
-    - "\uC548\uB155\uD558\uC138\uC694, \uC564\uB514\uC785\uB2C8\uB2E4."
-    - 45
-    characterPortrait: {fileID: 0}
+  gameDialogueSequences: []
 --- !u!4 &111036248
 Transform:
   m_ObjectHideFlags: 0
@@ -334,26 +458,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &111036249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111036246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    characterName: "\uB098\uB808\uC774\uC158"
-    sentences: []
-    characterPortrait: {fileID: 0}
-  interactionKey: 101
-  autoTrigger: 0
-  oneTimeOnly: 0
-  interactionUI: {fileID: 0}
 --- !u!1 &156081386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,8 +1147,8 @@ Transform:
   m_GameObject: {fileID: 517464499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 195, y: 764, z: 0}
-  m_LocalScale: {x: 182.82051, y: 426.96475, z: 1}
+  m_LocalPosition: {x: 112, y: 266, z: 0}
+  m_LocalScale: {x: 59.91028, y: 198.11163, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1324,13 +1428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    characterName: "\uB3C4\uC9F1"
-    sentences:
-    - 
-    - 
-    - 
-    characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+  dialogueSequences: []
+  delayBetweenDialogues: 0.5
   interactionKey: 101
   autoTrigger: 0
   oneTimeOnly: 0
@@ -1762,6 +1861,509 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736538189}
+  m_CullTransparentMesh: 1
+--- !u!1 &750182183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 750182184}
+  - component: {fileID: 750182187}
+  - component: {fileID: 750182186}
+  - component: {fileID: 750182185}
+  m_Layer: 5
+  m_Name: "\uC6D0\uAD11t\uB9CC\uB0A8"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &750182184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750182183}
+  m_LocalRotation: {x: -0, y: 0.008521755, z: -0, w: 0.9999637}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1390559712}
+  m_Father: {fileID: 1257058304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.977, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 605, y: 425}
+  m_SizeDelta: {x: 426.179, y: 129.803}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &750182185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750182183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 750182186}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1606436554}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &750182186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750182183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &750182187
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750182183}
+  m_CullTransparentMesh: 1
+--- !u!1 &760901146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760901147}
+  - component: {fileID: 760901150}
+  - component: {fileID: 760901149}
+  - component: {fileID: 760901148}
+  m_Layer: 5
+  m_Name: "5\uCE35\uB3C4\uCC29(\uC9C4\uC5D4\uB529)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &760901147
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760901146}
+  m_LocalRotation: {x: -0, y: 0.008521755, z: -0, w: 0.9999637}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1455431014}
+  m_Father: {fileID: 1257058304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.977, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 606, y: 208}
+  m_SizeDelta: {x: 426.179, y: 129.803}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &760901148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760901146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 760901149}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1373982883}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &760901149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760901146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &760901150
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760901146}
+  m_CullTransparentMesh: 1
+--- !u!1 &760952876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760952878}
+  - component: {fileID: 760952877}
+  m_Layer: 0
+  m_Name: 3rdFloorTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &760952877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760952876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... "
+      - "\uC548\uB155\uD558\uC2ED\uB2C8\uAE4C. Andy 'The great' hwang\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC774\uB7F0 \uC77C\uC744 \uBC8C1\uB9AC\uB294 \uC774\uC720\uAC00 \uBB50\uC57C"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uAD81\uAE08\uD558\uC2ED\uB2C8\uAC00...?"
+      - "\uC774 \uCE5C\uAD6C\uB97C \uC4F0\uB7EC\uD2B8\uB9AC\uBA74 '\uC2E4\uB9D0\uC774'\uB97C
+        \uC54C \uC218 \uC788\uACA0\uC9C0\uC694..."
+      - "\uC18C\uAC1C\uB4DC\uB9BD\uB2C8\uB2E4. \uC2E0\uC9C0\uC6D0\uC120\uC0DD\uB2D8\uACFC\uC758
+        \uD569\uC791..."
+      - "<Library>\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 0
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}
+--- !u!4 &760952878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760952876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428.64032, y: 247.59064, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &775541203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775541204}
+  - component: {fileID: 775541207}
+  - component: {fileID: 775541206}
+  - component: {fileID: 775541205}
+  m_Layer: 5
+  m_Name: "3\uCE35 \uD074\uB9AC\uC5B4"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &775541204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775541203}
+  m_LocalRotation: {x: -0, y: 0.008521755, z: -0, w: 0.9999637}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1344308213}
+  m_Father: {fileID: 1257058304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.977, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 85, y: 419}
+  m_SizeDelta: {x: 426.179, y: 129.803}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &775541205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775541203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 775541206}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 760952877}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &775541206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775541203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &775541207
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775541203}
   m_CullTransparentMesh: 1
 --- !u!1 &789122648
 GameObject:
@@ -2838,9 +3440,13 @@ RectTransform:
   m_Children:
   - {fileID: 244567228}
   - {fileID: 2137090173}
+  - {fileID: 1185132119}
   - {fileID: 1254398735}
   - {fileID: 1903174124}
-  - {fileID: 1185132119}
+  - {fileID: 775541204}
+  - {fileID: 750182184}
+  - {fileID: 69160717}
+  - {fileID: 760901147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2848,6 +3454,307 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1344308212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344308213}
+  - component: {fileID: 1344308215}
+  - component: {fileID: 1344308214}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1344308213
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344308212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 775541204}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1344308214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344308212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "3\uCE35 \uD074\uB9AC\uC5B4\n"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1344308215
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344308212}
+  m_CullTransparentMesh: 1
+--- !u!1 &1373982882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373982884}
+  - component: {fileID: 1373982883}
+  m_Layer: 0
+  m_Name: TrueEndingTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1373982883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373982882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... \uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB2E4\uB2C8. '\uBC15\uC218'
+        \uCCD0\uB4DC\uB9AC\uACE0\uC2F6\uAD70\uC694."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uADF8\uB9CC\uD574\uB77C \uB09C \uB108\uC758 \uC57D\uC810\uC744 \uC950\uACE0\uC788\uB2E4"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... \uC800\uC5D0\uAC8C 'weekness'\uB77C\uB294 \uAC1C\uB150\uC740
+        \uC5C6\uC2B5\uB2C8\uB2E4\uB9CC?"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "(\uC2EC\uD638\uD761)"
+      - "^\uC7A5\uD559\uD034\uC988 \uC870\uBCC4\uB531^"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - '!!!'
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD0B7\uC0AC\uB9C8!!!!!"
+      characterPortrait: {fileID: 1549169562487608561, guid: cb1f6a4ac404b0241b29ee0e13ba02c9, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uC564\uB514\uB294 \uC0AC\uB9DD\uD558\uACE0 \uB9D0\uC558\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 101
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}
+--- !u!4 &1373982884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373982882}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428.64032, y: 247.59064, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382746559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +3829,278 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382746559}
+  m_CullTransparentMesh: 1
+--- !u!1 &1390559711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390559712}
+  - component: {fileID: 1390559714}
+  - component: {fileID: 1390559713}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1390559712
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390559711}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750182184}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1390559713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390559711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\uC6D0\uAD11t\uB9CC\uB0A8"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1390559714
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390559711}
+  m_CullTransparentMesh: 1
+--- !u!1 &1455431013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455431014}
+  - component: {fileID: 1455431016}
+  - component: {fileID: 1455431015}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1455431014
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455431013}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 760901147}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1455431015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455431013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "5\uCE35\uB3C4\uCC29(\uC9C4\uC5D4\uB529)"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1455431016
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455431013}
   m_CullTransparentMesh: 1
 --- !u!1 &1483441577
 GameObject:
@@ -3120,8 +4299,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a5e1c9cbb0fa25419e1a6d97118fdd8, type: 2}
-  m_sharedMaterial: {fileID: -2756168053050928722, guid: 1a5e1c9cbb0fa25419e1a6d97118fdd8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3197,6 +4376,380 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583946684}
   m_CullTransparentMesh: 1
+--- !u!1 &1606436553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606436555}
+  - component: {fileID: 1606436554}
+  m_Layer: 0
+  m_Name: WonGwangTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1606436554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606436553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC7A0\uAE50. \uC5B4\uB514\uC11C \uC18C\uB9AC \uB4E4\uB9AC\uC9C0 \uC54A\uB098?"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uBB34\uC2A8 \uC18C\uB9AC? \uB09C \uC548\uB4E4\uB9AC\uB294\uB370"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: ???
+      sentences:
+      - "\uC9C0\uC789-\uC9C0\uC774\uC789-\uBC14\uC774\uBE0C\uB808\uC774\uD130-"
+      characterPortrait: {fileID: 0}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uAC00\uAE4C\uC774 \uB2E4\uAC00\uAC00\uC790 \uC5C4\uCCAD\uB09C \uC9C4\uB3D9
+        \uC18C\uB9AC\uAC00 \uB4E4\uB824\uC654\uB2E4."
+      - "\uB3C4\uC9F1\uC740 \uBC14\uB2E5\uC5D0 \uB110\uBE0C\uB7EC\uC9C4 \uAD50\uC0AC\uC99D\uC744
+        \uB314\uC9C0\uB9CC, \uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0 \uC54A\uC558\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uB098\uC640."
+      - "(\uD391) (\uC544\uB2E8\uAD00 \uBB38 \uD130\uC9C0\uB294 \uC18C\uB9AC)"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uB07C\uBEAB"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC11D\uC601\uAD11T"
+      sentences:
+      - "\uC624, \uACE0\uB9D9\uB124. "
+      - "\uB108\uD76C\uB4E4\uC774 \uBAA8\uB97C \uBE44\uBC00\uC744 \uC54C\uB824\uC8FC\uB3C4\uB85D\uD558\uC9C0..."
+      - "\uD669\uC720\uCC2C\uAD70\uC774... \uD559\uBE44\uB85C \uC544\uB2E8\uAD00\uC744
+        \uB85C\uBD07\uC73C\uB85C \uAC1C\uC870\uD55C\uAC83\uC774\uB2E4!"
+      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uC54C\uACE0\uC788\uB294\uB370\uC6A9"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC11D\uC6D0\uAD11T"
+      sentences:
+      - "(\uC2DC\uBB34\uB8E9)"
+      - "\uADF8\uB7FC \uB09C \uC5EC\uAE30\uC11C \uB9CC\uB4E0 emp\uD3ED\uD0C4\uACFC
+        \uB0B4 \uCD5C\uACE0\uC758 \uAC78\uC791\uC778 \uCD1D\uC744 \uC8FC\uB9C8!"
+      - "\uC5D0 \uCC98\uC74C\uC73C\uB85C \uBC1C\uACAC\uB41C emp \uD604\uC0C1\uC758
+        \uC5F0\uC7A5\uC120\uC73C\uB85C\uC11C..."
+      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - ;;
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC11D\uC601\uAD11T"
+      sentences:
+      - "\uC19C\uBE0C\uB77C \uAD81"
+      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\u3147\u314E"
+      - "\uADF8\uB7FC \uC800 \uCD1D\uC740?"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC11D\uC601\uAD11T"
+      sentences:
+      - "\uC774 \uCD1D\uC740 APFSDS\uC774\uB77C\uACE0 \uBB34\uB824 \uACE0\uC591\uC774\uB97C
+        \uC18C\uD658\uD558\uBA74\uC11C \uC544\uC8FC \uD070 \uB808\uC774\uC800\uB97C
+        \uBC1C\uC0AC\uD560 \uC218 \uC788\uB294 \uB808\uC774\uC800\uAC74\uC774\uC9C0"
+      - "\uC774 \uB808\uC774\uC800\uAC74\uC740 \uD3EC\uB97C \uB9CC\uB4E4\uAE30 \uC5B4\uB835\uAE30
+        \uB54C\uBB38\uC5D0 \uC9C0\u3131"
+      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "(\uD478\uC29B) (\uD638\uBC14\uBC14\uBC27) (\uD391)"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC11D\uC6D0\uAD11T"
+      sentences:
+      - ...
+      - "\uC774\u2026 \uB808\uC774\uC800\uAC74\uC740\u2026 \uD3EC\uB97C\u2026 \uB9CC\uB4E4\uAE30\u2026
+        \uC5B4\uB835\uAE30... \uB54C\uBB38\uC5D0... \uC9C0\uAE08\u2026"
+      - "\uC774 \uC9C0\uAD6C\uC0C1\uC5D0 \uB2E8 \uD55C \uBC1C\uBC16\uC5D0 \uC5C6\uB2E4\u2026"
+      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - ...
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - ...
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uC11D\uC6D0\uAD11T\uB294 \uAE30\uC808\uD558\uACE0 \uB9D0\uC558\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC5B4\uCA54 \uC218 \uC5C6\uC9C0. \uC774 \uD3ED\uD0C4\uC73C\uB85C 5\uCE35\uC758
+        \uC801\uB4E4\uC744 \uD574\uCE58\uC6B0\uC790."
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 101
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}
+--- !u!4 &1606436555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606436553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428.64032, y: 247.59064, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623371869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,7 +5267,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878600265}
-  - component: {fileID: 1878600264}
   - component: {fileID: 1878600266}
   m_Layer: 0
   m_Name: GameStarter
@@ -3723,21 +5275,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1878600264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878600263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676f5e36675723a4b937b731cb4b0c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueSystem: {fileID: 0}
-  dialogueSequences: []
-  delayBetweenDialogues: 0.5
 --- !u!4 &1878600265
 Transform:
   m_ObjectHideFlags: 0
@@ -3767,7 +5304,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSystem: {fileID: 111036247}
   dialogueSequences:
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: "\uB3C4\uC9F1"
       sentences:
       - "JK \uC774\uBC88\uC5D0 \uC0C8\uB85C\uC6B4 \uAD50\uC7A5\uC774 \uBD80\uC784\uD588\uB300"
@@ -3778,12 +5320,17 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: JK
       sentences:
       - "\uC751. \uC54C\uC5B4."
       - "\uADFC\uB370 \uD669\uC720\uCC2C \uC694\uC0C8 \uBB50\uD558\uACE0\uB2E4\uB2C8\uB0D0?
-        \uC694\uC998\uB530\uB77C \uC548\uBCF4\uC778\uB2E4"
+        n\uB144\uCA30 \uC548\uBCF4\uC774\uB294\uB370"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -3791,7 +5338,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: "\uB3C4\uC9F1"
       sentences:
       - "\u3139\u3147\uC774\uAC00;"
@@ -3804,7 +5356,39 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 1
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    dialogue:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: JK
       sentences:
       - "\uC73C"
@@ -3816,7 +5400,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: "\uB3C4\uC9F1"
       sentences:
       - "\uC815\uC2E0\uC774 \uB4E4\uC5B4 JK?"
@@ -3828,7 +5417,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: JK
       sentences:
       - "\uC544\uB2E8\uAD00...?"
@@ -3839,7 +5433,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: "\uB3C4\uC9F1"
       sentences:
       - "\uC751. \uC557!"
@@ -3851,7 +5450,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: "\uB098\uB808\uC774\uC158"
       sentences:
       - "\uADF8\uB807\uB2E4. \uB85C\uBD07\uC73C\uB85C \uBCC0\uD55C \uC544\uB2E8\uAD00\uC774
@@ -3864,7 +5468,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: JK
       sentences:
       - "\uC73C\uC544\uB2DB. \uC564\uB514\uAC00 \uC6B0\uB9AC\uB4E4\uC758 \uD559\uBE44\uB85C
@@ -3876,7 +5485,12 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
       characterName: "\uB3C4\uC9F1"
       sentences:
       - "\uADF8\uB798\uC11C \uAE09\uC2DD\uC5D0 \uC790\uAFB8 \uD30C\uB9AC\uAC00 \uB098\uC628\uAC70\uAD70
@@ -3890,462 +5504,143 @@ MonoBehaviour:
       characterName: 
       sentences: []
       characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uC548\uB155\uD558\uC2ED\uB2C8\uAE4C. \uBD81\uC77C\uACE0\uB4F1\uD559\uAD50
-        \uD559\uC0DD\uD68C\uC7A5 Andy 'the great' whang \uC785\uB2C8\uB2E4. "
-      - "\u314E\uD6D7 \uC800\uC758 \uC644\uBCBD\uD55C '\uC544\uB2E8\uAD00 \uC99D\uCD95
-        \uACF5\uC0AC'\uB294 \uC5B4\uB5A0\uC168\uB294\uC9C0\uC694...?"
-      - "\uC774\uAC83\uC740 (\uB300\uCDA9 \uB3D9\uC544\uB9AC \uC774\uB984)\uC774\uB791
-        \uC5FD\uD569\uD558\uC5EC \uB9CC\uB4E0 \uC81C \uC57C\uC2EC\uC791... "
-      - "'MECA ANDY'\uC785\uB2C8\uB2E4."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "(\uB300\uCDA9 \uBA54\uCE74pc\uBC29\uAD00\uB828\uB4DC\uB9BD)"
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uADF8\uB7EC\uBA74 \uBD80\uB514 'injoy' \uD574\uC8FC\uC2DC\uAE38."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "\uC544\uB2DB. \uC800\uAC74 \uD669\uC720\uCC2C\uC544\uB2CC\uAC00?"
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD6C4\uD6D7... \uC800\uB294 \uC774 \uD559\uAD50\uC5D0 \uBD88\uB9CC\uC774
-        \uB9CE\uC558\uC2B5\uB2C8\uB2E4."
-      - "\uC608\uB97C\uB4E4\uC790\uBA74... \uC5EC\uACE0 \uD559\uC0DD\uC740 \uB0A8\uACE0\uC758
-        \uC601\uC5ED\uC744 \uB3CC\uC544\uB2E4\uB2C8\uACE0... \uC5B4\uCA4C\uAD6C..."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB098\uB808\uC774\uC158"
-      sentences:
-      - "\uADF8\uB807\uB2E4. 2024\uB144 \uD559\uC0DD\uD68C\uC7A5 \uC120\uAC70\uB584
-        1\uD559\uB144\uB4E4\uC744 \uD640\uB9B0 \uBC14\uB85C \uADF8 \uBC1C\uC5B8\uC774\uC5C8\uB2E4."
-      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uC774\uAC83\uC740 \uC2E0\uC9C0\uC6D0 \uC120\uC0DD\uB2D8\uC774\uB791 \uD611\uC5C5\uD558\uC5EC
-        \uB9CC\uB4E0 \uC81C \uC5ED\uC791... "
-      - "'Library'\uC785\uB2C8\uB2E4."
-      - "\uADF8\uB7EC\uBA74 \uBD80\uB514 'saticefy'\uD55C \uC2DC\uAC04 \uB418\uC2DC\uAE38."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "\uC7A0\uAE50. \uC5EC\uAE30\uC11C \uC18C\uB9AC \uB4E4\uB9AC\uC9C0 \uC54A\uC544?"
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "\uD760? \uC5EC\uAE34 \uC11D\uC601\uAD11 \uC120\uC0DD\uB2D8\uC758..."
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB098\uB808\uC774\uC158"
-      sentences:
-      - "\uB3C4\uC9F1\uC740 \uBC14\uB2E5\uC5D0 \uB110\uBE0C\uB7EC\uC9C4 \uAD50\uC0AC\uC99D\uC744
-        \uD558\uB098 \uCC0D\uC5C8\uC9C0\uB9CC \uBB38\uC740 \uC5F4\uB9AC\uC9C0 \uC54A\uC558\uB2E4."
-      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "\uB098\uC640\uBD10."
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "\uB07C\uBEAB"
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC11D\uC601\uAD11T"
-      sentences:
-      - "\uC74D...\uC73C\uC74D...(\uB098\uC880 \uAD6C\uD574\uC918)"
-      - "\uD734... \uB108\uD76C\uB4E4\uC5D0\uAC8C \uBE44\uBC00\uC744 \uD558\uB098
-        \uC54C\uB824\uC8FC\uB9C8. "
-      - "\uD669\uC720\uCC2C\uAD70\uC740... \uC544\uB2E8\uAD00\uC744 \uAC1C\uC870\uD574\uC11C
-        \uB85C\uBD07\uC73C\uB85C \uB9CC\uB4E4\uACE0 \uBD81\uC77C\uACE0\uB97C \uC9C0\uBC30\uD558\uB824\uACE0
-        \uD55C\uB2E4!"
-      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "\uC54C\uACE0\uC788\uB294\uB370\uC6A9"
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC11D\uC601\uAD11T"
-      sentences:
-      - "(\uC2DC\uBB34\uB8E9)"
-      - "\uC544\uBB34\uD2BC, \uC774\uAC78 \uAC00\uC9C0\uACE0 \uAC00\uBA74 \uD669\uC720\uCC2C\uAD70\uC744
-        \uBB3C\uB9AC\uCE60 \uC218 \uC788\uC744\uAC70\uB2E4. EMP \uD3ED\uD0C4\uACFC
-        \uD2B9\uC81C \uCD1D\uC774\uC9C0."
-      - "EMP\uD3ED\uD0C4\uC740 \uC804\uC790\uAE30 \uD384\uC2A4 \uC218\uB958\uD0C4\uC774\uB77C\uACE0\uB3C4
-        \uD558\uB294\uAC83\uC778\uB370 \uCD08\uAE30\uC5D0\uB294 \uD575\uD3ED\uBC1C\uC5D0\uC11C
-        \uD30C\uC0DD\uB41C \uBD80\uC218\uC801\uC778\uAC1C\uB150\uC774\uC5C8\uC9C0\uB9CC..."
-      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - ;;
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC11D\uC601\uAD11T"
-      sentences:
-      - "\uC19C\uBE0C\uB77C \uAD81"
-      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "\u3147\u314E \uC774\uD574\uAC00\uC3D9\uC3D9\uB418\uC796\uC544"
-      - "\uADF8\uB7FC \uCD1D\uC740 \uBB54\uB370\uC6A9"
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC11D\uC601\uAD11T"
-      sentences:
-      - "\uBA4B\uC9C0\uC9C0? \uC774 \uCD1D\uC740 APFSDS\uC774\uB77C\uACE0 \uBB34\uB824
-        \uACE0\uC591\uC774\uB97C \uC18C\uD658\uD558\uBA74\uC11C \uC544\uC8FC \uD070
-        \uB808\uC774\uC800\uB97C \uBC1C\uC0AC\uD560 \uC218 \uC788\uB294 \uB808\uC774\uC800\uAC74\uC774\uC9C0
-        \uC774 \uB808\uC774\uC800\uAC74\uC740 \uD3EC\uB97C \uB9CC\uB4E4\uAE30 \uC5B4\uB835\uAE30
-        \uB54C\uBB38\uC5D0 \uC9C0\uAE08\u3147"
-      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "(\uD391)"
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC11D\uC601\uAD11T"
-      sentences:
-      - "\u2026 \uC774\u2026 \uB808\uC774\uC800\uAC74\uC740\u2026 \uD3EC\uB97C\u2026
-        \uB9CC\uB4E4\uAE30\u2026 \uC5B4\uB835\uAE30... \uB54C\uBB38\uC5D0... \uC9C0\uAE08\u2026"
-      - "\uC774 \uC9C0\uAD6C\uC0C1\uC5D0 \uB2E8 \uD55C \uBC1C\uBC16\uC5D0 \uC5C6\uB2E4\u2026"
-      characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - ...
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB098\uB808\uC774\uC158"
-      sentences:
-      - "\uADF8\uB807\uAC8C \uC11D\uC601\uAD11\uC740 \uAE30\uC808\uD588\uB2E4."
-      - "Jk\uC640 \uB3C4\uC9F1\uC740 emp\uD3ED\uD0C4\uC744 \uD130\uB728\uB9AC\uACE0
-        \uC11C\uB458\uB7EC 5\uCE35\uC73C\uB85C \uAC14\uB2E4."
-      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD6C4\uD6D7... \uC6A9\uCF00 \uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB2E4\uB2C8.
-        '\uB9C9\uC218'\uCCD0\uB4DC\uB9AC\uACE0\uC2F6\uAD70\uC694. JK."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "\uC774\uC81C \uADF8\uB9CC\uB46C\uB77C \uC564\uB514 \uC9C0\uAE08 \uB108\uB294
-        \uB3CC\uC774\uD0AC \uC218 \uC5C6\uB294 \uAC15\uC744 \uAC74\uB11C\uB2E4"
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD6C4\uD6D7... \uB3CC\uC774\uD0AC \uC218 \uC5C6\uB2E4\uBA74..."
-      - "(\uC548\uACBD \uD4E8\uC29D) \uBD80\uC234\uBC84\uB9AC\uB294 \uAC83\uBFD0..."
-      - "\uB098\uC640\uB77C \uB0B4 \uCD5C\uC885\uBCD1\uAE30 <\uB9C9\uC2DC\uBB34\uC2A4
-        The \uC544\uB2E8\uAD00>\uC774\uC5EC."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB098\uB808\uC774\uC158"
-      sentences:
-      - "\uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0 \uC54A\uC558\uB2E4."
-      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "\uD760... \uC800..."
-      - "EMP\uD3ED\uD0C4 \uB54C\uBB38\uC5D0 5\uCE35 \uC804\uC790\uAE30\uAE30\uB294
-        \uC791\uB3D9\uD558\uC9C0 \uC54A\uC744\uAC78\uC694...?"
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\u3131-"
-      - "\uADF8\uB807\uB2E4\uBA74 \uB098\uC640\uB77C \uB0B4 \uCC28\uC885\uBCD1\uAE30
-        <Andy 'The me' hwang>"
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "\uADF8\uAC8C\uBB54\uB370\uC539\uB355\uC544"
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uB098\uB2E4."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "\uC774 \uBD80\uBD84\uC740 \uB2E4\uB978 \uC5D4\uB529\uC785\uB2C8\uB2E4."
-      - "\uAC70\uAE30\uAE4C\uC9C0\uB2E4 \uC564\uB514 \uB09C \uB108\uC758 \uC57D\uC810\uC744
-        \uC950\uACE0 \uC788\uB2E4"
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD6C4\uD6D7... \uC800\uAC19\uC740 \uC0AC\uB78C\uC5D0\uAC8C 'weekness'\uB780
-        \uC874\uC7AC\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4..."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD6C4\uD6D7... \uC800\uAC19\uC740 \uC0AC\uB78C\uC5D0\uAC8C 'weekness'\uB780
-        \uC874\uC7AC\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4..."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: JK
-      sentences:
-      - "(\uC2EC\uD638\uD761)"
-      - "\uC7A5\uD559\uD034\uC988 \uC870\uBCC4\uB530\uC544\uC544\uC544\uC544\uC544\uC544\uC545!!!"
-      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD06C\uC544\uC544\uC544\uC544\uC545!!!!! \uD0B7\uC0AC\uB9C8!!!!!!!!!!"
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - dialogue:
-      characterName: "\uB098\uB808\uC774\uC158"
-      sentences:
-      - "\uC564\uB514\uB294 \uC0AC\uB9DD\uD588\uB2E4."
-      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  delayBetweenDialogues: 0.5
+  delayBetweenDialogues: 0
+--- !u!1 &1886487414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886487415}
+  - component: {fileID: 1886487417}
+  - component: {fileID: 1886487416}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1886487415
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886487414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 69160717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1886487416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886487414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "5\uCE35\uB3C4\uCC29"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1886487417
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886487414}
+  m_CullTransparentMesh: 1
 --- !u!1 &1903174123
 GameObject:
   m_ObjectHideFlags: 0
@@ -4519,8 +5814,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Gostick:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4672,6 +5967,178 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068524099}
   m_CullTransparentMesh: 1
+--- !u!1 &2086727727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086727729}
+  - component: {fileID: 2086727728}
+  m_Layer: 0
+  m_Name: 5thFloorTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2086727728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086727727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... \uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB2E4\uB2C8. '\uBC15\uC218'
+        \uCCD0\uB4DC\uB9AC\uACE0\uC2F6\uAD70\uC694."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC5B4\uCA30\uC11C \uC774\uB7F0 \uC77C\uC744 \uBC8C1\uB9AC\uB294 \uAC70\uC9C0?
+        2\uD2B8"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... "
+      - "\uBD81\uC77C\uACE0\uB294 '\uBC1C\uC804' \uC774 \uC5C6\uC5C8\uC2B5\uB2C8\uB2E4. "
+      - "\uC608\uB97C\uB4E4\uC5B4... \uAD6C\uC2DC\uB300\uC801 \uC720\uBB3C\uC778
+        '3\uD559\uB144 21\uC2DC \uC774\uD6C4 \uC678\uBC15', '\uC57C\uAC04\uC790\uC2B5
+        11\uC2DC 30\uBD84\uAE4C\uC9C0', \t\uAE30\uD0C0\uB4F1\uB4F1..."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uC791\uB144\uC5D0 \uAC74\uC758\uD588\uB2E4\uAC00 \uBAA8\uB450 \uBE60\uAFB8\uBA39\uC740\uAC83\uB4E4\uBFD0\uC774\uC796\uC544..."
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uADF8'\uB9CC\uD574'\uB77C. \uB108\uB294 \uC774\uBBF8 \uB3CC\uC774\uD0AC
+        \uC218 \uC5C6\uB294 \uAC15\uC744 \uAC74\uB11C\uB2E4."
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7..."
+      - "\uB3CC\uC774\uD0AC \uC218 \uC5C6\uB2E4\uBA74..."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uBD80\uC234\uBC84\uB9AC\uB294 \uC218\uBC16\uC5D0..."
+      - "\uC18C\uAC1C\uD574\uB4DC\uB9AC\uC8E0. \uC81C \uCD5C\uC885\uBCD1\uAE30..."
+      - "<\uB9C9\uC2DC\uBB34\uC2A4 The \uC544\uB2E8\uAD00>\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 101
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}
+--- !u!4 &2086727729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086727727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428.64032, y: 247.59064, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2137090172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,8 +6273,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dialogue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a5e1c9cbb0fa25419e1a6d97118fdd8, type: 2}
-  m_sharedMaterial: {fileID: -2756168053050928722, guid: 1a5e1c9cbb0fa25419e1a6d97118fdd8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
+  m_sharedMaterial: {fileID: -2659567741151340238, guid: 23c6e77c333ed634cb7dc3754e93c5f1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4898,3 +6365,7 @@ SceneRoots:
   - {fileID: 1861292419}
   - {fileID: 1647982848}
   - {fileID: 1878600265}
+  - {fileID: 760952878}
+  - {fileID: 1606436555}
+  - {fileID: 2086727729}
+  - {fileID: 1373982884}

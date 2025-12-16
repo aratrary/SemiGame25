@@ -88,6 +88,10 @@ public class DialogueSystem : MonoBehaviour
     /// 타이핑 중단 시 사용
     /// </summary>
     private Coroutine typingCoroutine;
+    /// <summary>
+    /// 현재 출력 중인 문장 캐시 (타이핑 스킵용)
+    /// </summary>
+    private string currentSentence = string.Empty;
     private enum UIState { None, Dialogue, SkillInventory }
     // ⭐ UI 상태 정의 ⭐
     private UIState currentUIState = UIState.None; 
@@ -134,8 +138,8 @@ public class DialogueSystem : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // 대화가 활성화되어 있고 스페이스바가 눌렸을 때만 처리
-        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+        // 대화가 활성화되어 있고 P키가 눌렸을 때만 처리
+        if (dialogueActive && Input.GetKeyDown(KeyCode.P))
         {
             HandleSpacebarInput();
         }
@@ -160,10 +164,13 @@ public class DialogueSystem : MonoBehaviour
     /// 외부 스크립트(DialogueTrigger 등)에서 호출
     /// </summary>
     /// <param name="dialogue">표시할 대화 데이터</param>
-    public void StartDialogue(DialogueData dialogue)
+    /// <param name="keepPanelOpen">패널이 이미 열려있으면 유지 (연속 대화용)</param>
+    public void StartDialogue(DialogueData dialogue, bool keepPanelOpen = false)
     {
-        // 이미 대화가 진행 중이면 새 대화 시작 방지
-        if (dialogueActive)
+        Debug.Log($"StartDialogue 호출됨 - keepPanelOpen: {keepPanelOpen}, dialogueActive: {dialogueActive}");
+        
+        // 이미 대화가 진행 중이고 keepPanelOpen이 아니면 새 대화 시작 방지
+        if (dialogueActive && !keepPanelOpen)
         {
             Debug.LogWarning("대화가 이미 진행 중입니다!");
             return;
@@ -182,8 +189,22 @@ public class DialogueSystem : MonoBehaviour
         if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 혹시 몰라 항상 끕니다.
         currentUIState = UIState.Dialogue; // 대화 시작하면 무조건 대화창 상태
         
-        // 대화창 패널 활성화 (화면에 표시)
-        dialoguePanel.SetActive(true);
+        // 대화창 패널 활성화 (화면에 표시) - keepPanelOpen이면 이미 열려있으므로 스킵
+        if (!keepPanelOpen)
+        {
+            Debug.Log("대화 패널을 활성화합니다.");
+            dialoguePanel.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("대화 패널 유지 (keepPanelOpen=true)");
+            // keepPanelOpen이어도 실제로 꺼져있으면 켜야 함
+            if (!dialoguePanel.activeSelf)
+            {
+                Debug.Log("패널이 꺼져있어서 다시 활성화합니다.");
+                dialoguePanel.SetActive(true);
+            }
+        }
         
         // 캐릭터 이름 설정 (빈 문자열이면 "???" 표시)
         characterNameText.text = string.IsNullOrEmpty(dialogue.characterName) ? "???" : dialogue.characterName;
@@ -211,11 +232,11 @@ public class DialogueSystem : MonoBehaviour
         OnDialogueStart();
     }
     
-    /// <summary>
-    /// 현재 대화를 강제로 종료하는 메서드
-    /// </summary>
-    public void EndDialogue()
+    /// <param name="keepPanelOpen">패널을 열어둔 채로 종료 (연속 대화용)</param>
+    public void EndDialogue(bool keepPanelOpen = false)
     {
+        Debug.Log("EndDialogue 호출됨!");
+        
         // 타이핑 코루틴이 실행 중이면 중지
         if (typingCoroutine != null)
         {
@@ -226,11 +247,21 @@ public class DialogueSystem : MonoBehaviour
         dialogueActive = false;
         isTyping = false;
 
+        // UI 요소들 비활성화 - keepPanelOpen이면 패널은 유지
+        if (!keepPanelOpen)
+        {
+            Debug.Log("dialoguePanel을 비활성화합니다.");
+            dialoguePanel.SetActive(false);
+        }
         // UI 요소들 비활성화
+        Debug.Log("dialoguePanel을 비활성화합니다.");
         dialoguePanel.SetActive(false);
         if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 확실히 끔
         currentUIState = UIState.None; // 대화 종료하면 UI 상태는 None
-        continueIndicator.SetActive(false);
+        if (continueIndicator != null)
+        {
+            continueIndicator.SetActive(false);
+        }
         
         // 초상화 숨기기
         if (characterPortrait != null)
@@ -244,6 +275,7 @@ public class DialogueSystem : MonoBehaviour
         
         // 큐 정리
         sentences.Clear();
+        currentSentence = string.Empty;
         
         // 대화 종료 이벤트
         OnDialogueEnd();
@@ -278,13 +310,18 @@ public class DialogueSystem : MonoBehaviour
         // 큐가 비어있으면 (더 이상 표시할 문장이 없으면)
         if (sentences.Count == 0)
         {
-            // 대화 종료
-            EndDialogue();
+            Debug.Log("문장이 모두 끝났습니다. 대화를 종료합니다.");
+            // 대화 상태만 비활성화 (패널은 GameStarter가 관리)
+            dialogueActive = false;
+            isTyping = false;
             return;
         }
         
+        Debug.Log($"남은 문장 수: {sentences.Count}");
+        
         // 큐에서 다음 문장을 추출 (FIFO 방식)
         string sentence = sentences.Dequeue();
+        currentSentence = sentence;
         
         // 이전 타이핑 코루틴이 있다면 중지
         if (typingCoroutine != null)
@@ -307,7 +344,10 @@ public class DialogueSystem : MonoBehaviour
         isTyping = true;
         
         // 계속하기 표시기 숨김 (타이핑 중에는 표시하지 않음)
-        continueIndicator.SetActive(false);
+        if (continueIndicator != null)
+        {
+            continueIndicator.SetActive(false);
+        }
         
         // 대화 텍스트 초기화 (빈 문자열로 시작)
         dialogueText.text = "";
@@ -327,7 +367,10 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
         
         // 계속하기 표시기 활성화 (사용자가 다음으로 진행할 수 있음을 알림)
-        continueIndicator.SetActive(true);
+        if (continueIndicator != null)
+        {
+            continueIndicator.SetActive(true);
+        }
     }
     
     /// <summary>
@@ -342,20 +385,15 @@ public class DialogueSystem : MonoBehaviour
             StopCoroutine(typingCoroutine);
         }
         
-        // 타이핑 상태 해제
+        // 현재 문장 즉시 완성
+        dialogueText.text = currentSentence;
         isTyping = false;
-        
-        // 현재 문장의 전체 내용을 즉시 표시
-        // Peek()는 큐에서 제거하지 않고 다음 요소만 확인
-        if (sentences.Count > 0)
-        {
-            // 아직 큐에 문장이 남아있다면, 마지막으로 Dequeue된 문장을 완성
-            // 실제로는 현재 타이핑 중인 문장을 완성해야 함
-            // 이 부분은 구현 방식에 따라 다를 수 있음
-        }
-        
+
         // 계속하기 표시기 활성화
-        continueIndicator.SetActive(true);
+        if (continueIndicator != null)
+        {
+            continueIndicator.SetActive(true);
+        }
     }
     
     /// <summary>

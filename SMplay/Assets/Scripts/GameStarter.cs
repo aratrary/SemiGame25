@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameStarter : MonoBehaviour
 {
     public DialogueSystem dialogueSystem;
     
-    [Header("´ëÈ­ ½ÃÄö½º ¼³Á¤")]
-    [Tooltip("´ëÈ­°¡ ÁøÇàµÉ ¼ø¼­´ë·Î ¹è¿­")]
+    [Header("ëŒ€í™” ì‹œí€€ìŠ¤ ì„¤ì •")]
+    [Tooltip("ì¬ìƒí•  ëŒ€í™” ì‹œí€€ìŠ¤ ë°°ì—´")]
     public DialogueSequence[] dialogueSequences;
     
-    [Header("µô·¹ÀÌ ¼³Á¤")]
-    [Tooltip("°¢ ´ëÈ­ »çÀÌÀÇ ´ë±â ½Ã°£ (ÃÊ)")]
+    [Header("ì¬ìƒ ì„¤ì •")]
+    [Tooltip("ê° ëŒ€í™” ì‚¬ì´ ëŒ€ê¸° ì‹œê°„ (ì´ˆ)")]
     public float delayBetweenDialogues = 0.5f;
     
     void Start()
@@ -21,27 +22,71 @@ public class GameStarter : MonoBehaviour
        
     IEnumerator StartSequence()
     {
+        int dialogueIndex = 0;
+        int totalDialogues = 0;
+        
+        // ì „ì²´ ëŒ€í™” ê°œìˆ˜ ë¯¸ë¦¬ ê³„ì‚° (ì»·ì”¬ ì œì™¸)
+        foreach (var seq in dialogueSequences)
+        {
+            if (!seq.isCutsceneOnly && seq.dialogue != null && seq.dialogue.IsValid())
+            {
+                totalDialogues++;
+            }
+        }
+        
         foreach (DialogueSequence sequence in dialogueSequences)
         {
+            if (sequence.isCutsceneOnly)
+            {
+                sequence.onCutscene?.Invoke();
+                if (sequence.cutsceneDuration > 0f)
+                {
+                    yield return new WaitForSeconds(sequence.cutsceneDuration);
+                }
+                continue;
+            }
+
             if (sequence.dialogue == null || !sequence.dialogue.IsValid())
             {
-                Debug.LogWarning("À¯È¿ÇÏÁö ¾ÊÀº ´ëÈ­ µ¥ÀÌÅÍ¸¦ °Ç³Ê¶İ´Ï´Ù.");
+                Debug.LogWarning("ìœ íš¨í•˜ì§€ ì•Šì€ ëŒ€í™” ë°ì´í„°ë¥¼ ê±´ë„ˆëœë‹ˆë‹¤.");
                 continue;
             }
             
-            // ´ëÈ­ Àü Æ®¸®°Å ºñÈ°¼ºÈ­
+            dialogueIndex++;
+            bool isLastDialogue = (dialogueIndex >= totalDialogues);
+            
+            Debug.Log($"=== ëŒ€í™” {dialogueIndex}/{totalDialogues} ì‹œì‘ (ë§ˆì§€ë§‰: {isLastDialogue}) ===");
+            
+            // ëŒ€í™” ì „ íŠ¸ë¦¬ê±° ë¹„í™œì„±í™”
             if (sequence.disableTriggerBefore != null)
             {
                 sequence.disableTriggerBefore.enabled = false;
             }
             
-            // ´ëÈ­ ½ÃÀÛ
-            dialogueSystem.StartDialogue(sequence.dialogue);
+            // ëŒ€í™” ì‹œì‘ (ì²« ëŒ€í™” ì•„ë‹ˆë©´ íŒ¨ë„ ìœ ì§€)
+            bool keepPanelOpen = (dialogueIndex > 1);
+            Debug.Log($"StartDialogue í˜¸ì¶œ - keepPanelOpen: {keepPanelOpen}");
+            dialogueSystem.StartDialogue(sequence.dialogue, keepPanelOpen);
             
-            // ´ëÈ­ ¿Ï·á ´ë±â
+            // ëŒ€í™” ì¢…ë£Œ ëŒ€ê¸°
+            Debug.Log("ëŒ€í™” ì¢…ë£Œ ëŒ€ê¸° ì¤‘...");
             yield return new WaitUntil(() => !dialogueSystem.IsDialogueActive());
             
-            // ´ëÈ­ ÈÄ Æ®¸®°Å È°¼ºÈ­
+            Debug.Log("ëŒ€í™” ì¢…ë£Œ ê°ì§€ë¨");
+            
+            // ëŒ€í™” ì¢…ë£Œ ì²˜ë¦¬ (ë§ˆì§€ë§‰ì´ ì•„ë‹ˆë©´ íŒ¨ë„ ìœ ì§€)
+            if (isLastDialogue)
+            {
+                Debug.Log("ë§ˆì§€ë§‰ ëŒ€í™” - íŒ¨ë„ ë‹«ê¸°");
+                dialogueSystem.EndDialogue(keepPanelOpen: false);
+            }
+            else
+            {
+                Debug.Log("ì¤‘ê°„ ëŒ€í™” - íŒ¨ë„ ìœ ì§€");
+                dialogueSystem.EndDialogue(keepPanelOpen: true);
+            }
+            
+            // ëŒ€í™” í›„ íŠ¸ë¦¬ê±° í™œì„±í™”
             if (sequence.enableTriggerAfter != null)
             {
                 if (sequence.setDialogueData != null)
@@ -51,31 +96,44 @@ public class GameStarter : MonoBehaviour
                 sequence.enableTriggerAfter.enabled = true;
             }
             
-            // ´ÙÀ½ ´ëÈ­±îÁö µô·¹ÀÌ
-            yield return new WaitForSeconds(delayBetweenDialogues);
+            // ë‹¤ìŒ ëŒ€í™”ê¹Œì§€ ëŒ€ê¸° (ë§ˆì§€ë§‰ì´ ì•„ë‹ˆë©´)
+            if (!isLastDialogue && delayBetweenDialogues > 0f)
+            {
+                yield return new WaitForSeconds(delayBetweenDialogues);
+            }
         }
         
-        Debug.Log("¸ğµç ´ëÈ­ ½ÃÄö½º°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ëª¨ë“  ëŒ€í™” ì‹œí€€ìŠ¤ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
 }
 
 /// <summary>
-/// °³º° ´ëÈ­ ½ÃÄö½º µ¥ÀÌÅÍ
+/// ê²Œì„ ëŒ€í™” ì‹œí€€ìŠ¤ êµ¬ì„± í´ë˜ìŠ¤
 /// </summary>
 [System.Serializable]
 public class DialogueSequence
 {
-    [Header("´ëÈ­ µ¥ÀÌÅÍ")]
-    [Tooltip("Àç»ıÇÒ ´ëÈ­")]
+    [Header("ì»·ì”¬ ì „ìš©")]
+    [Tooltip("ëŒ€ì‚¬ ì—†ëŠ” ì»·ì”¬ ì—°ì¶œì´ë©´ ì²´í¬. ì´ ê²½ìš° dialogueëŠ” ë¬´ì‹œë©ë‹ˆë‹¤.")]
+    public bool isCutsceneOnly = false;
+
+    [Tooltip("ì»·ì”¬ ê¸¸ì´(ì´ˆ). íƒ€ì„ë¼ì¸ ë“± ë‹¤ë¥¸ ì—°ì¶œì´ ëë‚˜ë©´ 0ìœ¼ë¡œ ë‘ê³  ì´ë²¤íŠ¸ì—ì„œ ì²˜ë¦¬í•˜ì„¸ìš”.")]
+    public float cutsceneDuration = 0f;
+
+    [Tooltip("ì»·ì”¬ ì—°ì¶œ ì½œë°± (íƒ€ì„ë¼ì¸ ì¬ìƒ ë“±)")]
+    public UnityEvent onCutscene;
+
+    [Header("ëŒ€í™” ë°ì´í„°")]
+    [Tooltip("ì¬ìƒí•  ëŒ€í™”")]
     public DialogueData dialogue;
     
-    [Header("Æ®¸®°Å Á¦¾î (¼±ÅÃ»çÇ×)")]
-    [Tooltip("ÀÌ ´ëÈ­ Àü¿¡ ºñÈ°¼ºÈ­ÇÒ Æ®¸®°Å")]
+    [Header("íŠ¸ë¦¬ê±° ì„¤ì • (ì„ íƒì‚¬í•­)")]
+    [Tooltip("ì´ ëŒ€í™” ì „ì— ë¹„í™œì„±í™”í•  íŠ¸ë¦¬ê±°")]
     public DialogueTrigger disableTriggerBefore;
     
-    [Tooltip("ÀÌ ´ëÈ­ ÈÄ¿¡ È°¼ºÈ­ÇÒ Æ®¸®°Å")]
+    [Tooltip("ì´ ëŒ€í™” í›„ì— í™œì„±í™”í•  íŠ¸ë¦¬ê±°")]
     public DialogueTrigger enableTriggerAfter;
     
-    [Tooltip("È°¼ºÈ­ÇÒ Æ®¸®°Å¿¡ ¼³Á¤ÇÒ ´ëÈ­ µ¥ÀÌÅÍ")]
+    [Tooltip("í™œì„±í™”ë  íŠ¸ë¦¬ê±°ì— ì„¤ì •í•  ìƒˆ ëŒ€í™” ë°ì´í„°")]
     public DialogueData setDialogueData;
 }
