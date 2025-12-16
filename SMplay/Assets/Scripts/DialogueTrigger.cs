@@ -352,6 +352,11 @@ public class DialogueTrigger : MonoBehaviour
     #region 유틸리티 및 디버그 메서드들
     private void ValidateTriggerSetup()
     {
+        // ===== 임시로 Collider 체크 비활성화 =====
+        // 버튼으로만 사용 중이므로 Collider 불필요
+        // 나중에 플레이어 진입 감지가 필요하면 Collider 추가 후 주석 해제
+        
+        /* Collider 체크 활성화 시 주석 해제
         Collider2D collider2D = GetComponent<Collider2D>();
         Collider collider3D = GetComponent<Collider>();
         
@@ -375,6 +380,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.LogWarning($"{gameObject.name}: Collider의 'Is Trigger' 옵션이 체크되지 않았습니다!");
         }
+        */
     }
     
     public string GetTriggerStatus()
