@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-
+    public bool testing;
     [Header("이동 힘")]
     float Iv; // 좌우 키 입력
     public float maxV ; // 최대속도
@@ -16,12 +16,9 @@ public class Moving : MonoBehaviour
     [Header("판단bool")]
     public bool isGround; //땅에있음?
     public bool isJumping; //점프함?
-    public bool isWinging;
-    public bool isThrowing;
-    public bool isSitting1;
-    public bool isSitting2;
     public bool havingWing;
     public bool Wingable;
+    public bool Stickable;
     Rigidbody2D rigid;
     SpriteRenderer sr;
     Animator anim;
@@ -41,7 +38,7 @@ public class Moving : MonoBehaviour
     float coyoteTimer; // 위에거 타이머
 
     [Header("바닥판정용")]
-    public Collider2D mainCollider; // 자기 콜라이더
+    public BoxCollider2D mainCollider; // 자기 콜라이더
     public LayerMask groundMask; // 땅 레이어만 감지하도록 함
     public float groundDistance; // 땅 감지 거리
     public float groundSkin; // 콜라이더 맨 밑바닥보단 조금 위에서 시작함
@@ -54,6 +51,16 @@ public class Moving : MonoBehaviour
     public Transform playerbody;
     public float stickspawnX;
     public float stickspawnY;
+    public Animator Stickanim;
+    public bool StickKey;
+    public float StickingLevel;
+    public float Stickingpower1;
+    public float Stickingpower2;
+    bool Ist;
+    public LayerMask StickMask;
+    public int Stickface;
+    public Transform Sticktrans;
+
 
 
     void Awake()
@@ -101,9 +108,62 @@ public class Moving : MonoBehaviour
             rigid.linearVelocityY = 0;
             rigid.AddForce(Vector2.up * Wingpower, ForceMode2D.Impulse);
         }
+
+        if (StickKey)
+        {
+            StickKey = false;
+            if (StickingLevel <1)
+            {
+                rigid.AddForce(Vector2.up * Stickingpower1, ForceMode2D.Impulse);
+            } 
+            else
+            {
+                rigid.AddForce(Vector2.up * Stickingpower2, ForceMode2D.Impulse);
+            }
+            StickingLevel = 0;
+            Stickanim.SetInteger("State", 0);
+            mainCollider.offset = new Vector2(0, -0.01f);
+            mainCollider.size = new Vector2(0.12f, 0.32f);
+        }
     }
     void Update()
     {
+        CheckGrounded_BoxCast();
+
+        if (Input.GetButton("Vertical") && Stickable)
+        {
+            if (!Ist)
+                Ist = true;
+        
+            if (StickingLevel < 1)
+            {
+                if (StickingLevel == 0)
+                {
+                    sr.flipX = Stickface >0;
+                    Iv = 0;
+                    Ij = false;
+                    ChangeAnim(State.Sit_1);
+                    Stickanim.SetInteger("State", 1);
+                    mainCollider.offset = new Vector2(0, -0.04f);
+                    mainCollider.size = new Vector2(0.12f, 0.26f);
+                    if (testing)
+                    playerbody.position = new Vector3(Sticktrans.position.x, playerbody.position.y, 0);
+                }
+                StickingLevel += Time.deltaTime;
+            }
+            else
+            {
+                ChangeAnim(State.Sit_2);
+                Stickanim.SetInteger("State", 2);
+            }
+            return;
+        } 
+        else if (Ist)
+        {
+            StickKey = true;
+            Ist = false;
+        }
+
         Iv = Input.GetAxis("Horizontal");
 
         Ij = Input.GetButton("Jump");
@@ -131,6 +191,7 @@ public class Moving : MonoBehaviour
 
         if (bufferTimer > 0 && Input.GetButton("Jump")) // 점프키 누름 
         {
+            
             bufferTimer -= Time.deltaTime; 
             if (coyoteTimer > 0)
             {
@@ -142,9 +203,6 @@ public class Moving : MonoBehaviour
         {
             coyoteTimer -= Time.deltaTime;
         }
-
-
-        isGround = CheckGrounded_BoxCast();
 
         if (!havingStick)
         {
@@ -196,6 +254,7 @@ public class Moving : MonoBehaviour
                 havingStick = false;
                 ChangeAnim(State.Throw);
                 CatchAnimationDummy = false;
+                Stickface = face;
             }
             else if (!havingStick)
             {
@@ -214,7 +273,7 @@ public class Moving : MonoBehaviour
         }
         else if (!isGround)
         {
-            if (!Wingable)
+            if (!Wingable && havingWing)
                 ChangeAnim(State.Wing);
             else
                 ChangeAnim(State.Jump);
@@ -234,7 +293,7 @@ public class Moving : MonoBehaviour
         anim.SetInteger("State", (int)state + ((havingStick && (int)state > 3) ? 4 : 0));
     }
 
-    private bool CheckGrounded_BoxCast()
+    private void CheckGrounded_BoxCast()
     {
         // 1) 내 몸 콜라이더의 월드 크기/위치 정보
         Bounds b = mainCollider.bounds;
@@ -260,12 +319,23 @@ public class Moving : MonoBehaviour
         );
 
         // 5) 아무것도 안 맞으면 공중
-        if (hit.collider == null) return false;
+        if (hit.collider == null)
+        {
+            isGround = false;
+            Stickable = false;
+        }
+        else
+        {
+            // 6) 트리거는 무시하고 싶으면(선택)
+            // if (hit.collider.isTrigger) return false;
 
-        // 6) 트리거는 무시하고 싶으면(선택)
-        // if (hit.collider.isTrigger) return false;
+            // 7) '위쪽 면'만 바닥으로 인정 (벽은 normal.y가 0에 가까움)
+            isGround = hit.normal.y >= minGroundNormalY;
 
-        // 7) '위쪽 면'만 바닥으로 인정 (벽은 normal.y가 0에 가까움)
-        return hit.normal.y >= minGroundNormalY;
+            
+            Stickable = (StickMask.value & ( 1 << hit.collider.gameObject.layer)) != 0;
+        }
+
+        
     }
 }
