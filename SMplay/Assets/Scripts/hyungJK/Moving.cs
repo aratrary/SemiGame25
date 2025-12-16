@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,12 +15,17 @@ public class Moving : MonoBehaviour
     [Header("판단bool")]
     public bool isGround; //땅에있음?
     public bool isJumping; //점프함?
+    public bool isWinging;
+    public bool isThrowing;
     Rigidbody2D rigid;
     SpriteRenderer sr;
+    public Animator anim;
+    public enum State { Throw, Catch, Sit_1, Sit_2, normal, run, Jump, Wing}
     bool Ij; // 점프 인풋
     int face = 1; // 바라보는 방향 좌 : -1, 우 : 1
     public bool havingStick = true;
     public bool throwableStick;
+    bool CatchAnimationDummy = true;
 
     [Header("버퍼시간, 코요태시간")]
     public float bufferTime; // 바닥판정 전 점프 눌러도 점프가 인정되는 시간
@@ -48,6 +54,7 @@ public class Moving : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         Jpower = Jumppower;
     }
@@ -87,6 +94,8 @@ public class Moving : MonoBehaviour
 
         Ij = Input.GetButton("Jump");
         //Debug.Log(Input.GetButton("Jump"));
+
+        AnimationUpdate();
 
         if (Input.GetButtonDown("Jump")) // 키 누르는데 점프중 아님
         {
@@ -133,7 +142,7 @@ public class Moving : MonoBehaviour
                 Jpower = Jumppower;
             }
 
-            if (havingStick)
+            if (havingStick && !throwableStick)
             {
                 throwableStick = true;
             }
@@ -156,12 +165,44 @@ public class Moving : MonoBehaviour
                 jaStick.SetActive(true);
                 stickscript.Throwing(face);
                 havingStick = false;
+                ChangeAnim(State.Throw);
+                CatchAnimationDummy = false;
             }
             else if (!havingStick)
             {
                 stickscript.Returning();
             }
         }
+
+    }
+
+    public void AnimationUpdate()
+    {
+        if (havingStick && !CatchAnimationDummy)
+        {
+            ChangeAnim(State.Catch);
+            CatchAnimationDummy = true;
+        }
+        else if (!isGround)
+        {
+            if (isWinging)
+                ChangeAnim(State.Wing);
+            else
+                ChangeAnim(State.Jump);
+        }
+        else if (Input.GetAxis("Horizontal") !=0)
+        {
+            ChangeAnim(State.run);
+        }
+        else
+        {
+            ChangeAnim(State.normal);
+        }
+    }
+
+    public void ChangeAnim(State state)
+    {
+        anim.SetInteger("State", (int)state + ((havingStick && (int)state > 3) ? 4 : 0));
     }
 
     private bool CheckGrounded_BoxCast()

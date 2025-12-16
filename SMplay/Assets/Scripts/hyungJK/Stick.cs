@@ -100,6 +100,7 @@ public class Stick : MonoBehaviour
             gameObject.SetActive(false);
             JKscript.havingStick = true;
             maincollider.isTrigger = false; 
+            JKscript.anim.SetInteger("State", 2);
         }
     }
 }
