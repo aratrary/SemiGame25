@@ -36,12 +36,17 @@ public class GameStarter : MonoBehaviour
         
         foreach (DialogueSequence sequence in dialogueSequences)
         {
+            // 컷씬 전용 모드 (대화 없이 컷씬만)
             if (sequence.isCutsceneOnly)
             {
+                Debug.Log($"=== 컷씬 전용 모드 ===");
+                Debug.Log($"컷씬 Duration: {sequence.cutsceneDuration}초");
                 sequence.onCutscene?.Invoke();
                 if (sequence.cutsceneDuration > 0f)
                 {
+                    Debug.Log($"{sequence.cutsceneDuration}초 대기 시작...");
                     yield return new WaitForSeconds(sequence.cutsceneDuration);
+                    Debug.Log($"컷씬 완료");
                 }
                 continue;
             }
@@ -56,6 +61,18 @@ public class GameStarter : MonoBehaviour
             bool isLastDialogue = (dialogueIndex >= totalDialogues);
             
             Debug.Log($"=== 대화 {dialogueIndex}/{totalDialogues} 시작 (마지막: {isLastDialogue}) ===");
+            
+            // 컷씬과 대화 동시 실행 (onCutscene 이벤트가 있으면 실행)
+            Debug.Log($"onCutscene 체크 중... (null: {sequence.onCutscene == null})");
+            if (sequence.onCutscene != null)
+            {
+                Debug.Log($"=== 컷씬 + 대화 동시 실행 ===");
+                sequence.onCutscene.Invoke();
+            }
+            else
+            {
+                Debug.LogWarning("onCutscene이 null입니다. 컷씬 없이 대화만 진행합니다.");
+            }
             
             // 대화 전 트리거 비활성화
             if (sequence.disableTriggerBefore != null)

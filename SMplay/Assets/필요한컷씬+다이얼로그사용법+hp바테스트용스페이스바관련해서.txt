@@ -1,0 +1,19 @@
+GameStarter의 element 7->화면 흔들리는 컷씬
+	       element 8->뛰어내리는 컷씬
+	       element 13->아단관 돌아가있는거 보여주기
+  	       element 15->아단관 손에 학생들 잡혀있음
+3rdFloorTrigger의 element 2->메카앤디 등장
+LibraryTrigger의 element 6->도서관 중간보스 등장
+WonGwangTrigger의 element 7->아단관 실사 사진 편집	
+		   element 20->로봇이 쓰러지고 로봇탈을 쓴 앤디만 살아있음
+		   element 23->앤디 던져짐
+5thFloorTrigger의 element 4->앤디->ㄷㄹ 변신
+	           element 5->도짱->앤디 변신
+	           element 7->앤디가 Jk미는 씬
+	           element 8->JK 떨어지는 씬
+	           element 9->자스틱 벽에 박고 점프
+	           element 12->앤디가 옥상문 잠구는 씬
+
+사용법:이름에 맞는 트리거가 활성화되면 inspector에 ~~trigger 넣고 dialoguetrigger->triggerdialogue() 누르면 됩니다
+대화창 넘기는 건 p키로 했는데 나중에 바꿔야할듯
+++추가:테스트용으로 스페이스바:체력 깎기, h키:체력 증가로 해놨는데 이거 바꿀겁니다 신경쓰지마세요

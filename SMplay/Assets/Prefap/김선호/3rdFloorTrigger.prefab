@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5244876086409803115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5011232592260677785}
+  - component: {fileID: 8078292905383289117}
+  m_Layer: 0
+  m_Name: 3rdFloorTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5011232592260677785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244876086409803115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428.64032, y: 247.59064, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8078292905383289117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244876086409803115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... "
+      - "\uC548\uB155\uD558\uC2ED\uB2C8\uAE4C. Andy 'The great' hwang\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC774\uB7F0 \uC77C\uC744 \uBC8C1\uB9AC\uB294 \uC774\uC720\uAC00 \uBB50\uC57C"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uAD81\uAE08\uD558\uC2ED\uB2C8\uAC00...?"
+      - "\uC774 \uCE5C\uAD6C\uB97C \uC4F0\uB7EC\uD2B8\uB9AC\uBA74 '\uC2E4\uB9D0\uC774'\uB97C
+        \uC54C \uC218 \uC788\uACA0\uC9C0\uC694..."
+      - "\uC18C\uAC1C\uB4DC\uB9BD\uB2C8\uB2E4. \uC2E0\uC9C0\uC6D0\uC120\uC0DD\uB2D8\uACFC\uC758
+        \uD569\uC791..."
+      - "<Library>\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 0
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}
