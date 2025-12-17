@@ -4,7 +4,6 @@ using UnityEngine;
 /// 대화 데이터를 저장하는 클래스
 /// Inspector에서 편집 가능하도록 Serializable 속성 추가
 /// </summary>
-/// sex
 [System.Serializable]
 public class DialogueData
 {
@@ -33,4 +32,15 @@ public class DialogueData
     /// null이면 초상화를 표시하지 않음
     /// </summary>
     public Sprite characterPortrait;
+    
+    /// <summary>
+    /// 대화 데이터의 유효성을 검증하는 메서드
+    /// </summary>
+    /// <returns>유효하면 true, 그렇지 않으면 false</returns>
+    public bool IsValid()
+    {
+        return !string.IsNullOrEmpty(characterName) && 
+               sentences != null && 
+               sentences.Length > 0;
+    }
 }
