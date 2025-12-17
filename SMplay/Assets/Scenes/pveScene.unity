@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 859142060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.84, y: -0.57, z: 0}
+  m_LocalPosition: {x: 5.69, y: -0.52, z: 0}
   m_LocalScale: {x: 1.1181126, y: 1.0843854, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -323,10 +323,11 @@ MonoBehaviour:
   groundCheck: {fileID: 0}
   groundCheckRadius: 1
   spritedir: 1
-  stop_dist: 1
+  stop_dist: 5
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  attack_dist: 10
   flip: 1
 --- !u!1 &1063985618
 GameObject:
@@ -745,6 +746,7 @@ GameObject:
   - component: {fileID: 1760307127}
   - component: {fileID: 1760307129}
   - component: {fileID: 1760307130}
+  - component: {fileID: 1760307131}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -816,7 +818,7 @@ Transform:
   m_GameObject: {fileID: 1760307126}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.49, y: -0.59, z: 0}
+  m_LocalPosition: {x: -3.93, y: -0.54, z: 0}
   m_LocalScale: {x: 1.1181126, y: 1.0843854, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -831,7 +833,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760307126}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -879,7 +881,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -895,6 +897,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.80649865, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &1760307131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760307126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a510a8a9844e674f94d654a6a93ba70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBarUI: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

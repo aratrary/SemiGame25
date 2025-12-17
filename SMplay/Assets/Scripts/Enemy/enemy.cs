@@ -23,10 +23,12 @@ public class enemy : MonoBehaviour
     private Animator animator;
     public RaycastHit2D hit;
     public LayerMask layerMask; 
-
+    public float attack_dist;
     public float flip = 1f;
+    private Collider2D targetCollider;
     void Start()
     {
+        
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealthController>();
         target = player.GetComponent<Rigidbody2D>();
@@ -71,12 +73,12 @@ public class enemy : MonoBehaviour
             if (spritedir)
             {
                 spriteRenderer.flipX = horizontal.x > 0;
-                flip = flip*(-1.0f);
+                flip = 1;
             }
             else
             {
                 spriteRenderer.flipX = horizontal.x < 0;
-                flip = flip*(-1.0f);
+                flip = -1;
             }
 
         }
@@ -98,17 +100,20 @@ public class enemy : MonoBehaviour
     {
         StartCoroutine(AttackCoroutine());
     }
-    IEnumerator AttackCoroutine() //공격
+    
+    IEnumerator AttackCoroutine()
     {
-        on_action = true; // 공격 중 다른 모션 하지 않도록 방지용
-        yield return new WaitForSeconds(1f);
+        on_action = true; // 행동 중 다른 모션 방지
+        yield return new WaitForSeconds(1f); // 공격 딜레이
         
-        animator.SetTrigger("Attack"); //공격 애니메이션 실행
+        animator.SetTrigger("Attack"); // 공격 애니메이션
         
-        Vector3 rayOrigin = transform.position + Vector3.up * 1f; 
-        if (Physics2D.Raycast(rayOrigin, transform.forward, 2,layerMask)) //Raycast로 전방 Player 레이어의 오브젝트 체크 (Player 레이어 위에 Player를 올려두면 감지하도록 해둠)
+        Vector2 dist = (Vector2)target.position - (Vector2)transform.position; // 플레이어 - 적 간 거리 (벡터)
+        if ((dist.x > 0 && spriteRenderer.flipX)|| (dist.x<0 && !spriteRenderer.flipX)) //벡터의 방향과 적 개체가 바라보는 방향이 같은지 확인)
         {
-            playerHealth.TakeDamage(attack_dmg);
+            if (dist.x < attack_dist && dist.y < 0.5) //공격 범위 이내에 플레이어가 있는지 확인
+                playerHealth.TakeDamage(attack_dmg); //플레이어에 연결된 PlayerHealthController에서 TakeDamage를 불러와서 실행
+                Debug.Log(playerHealth.currentHealth); //현재 플레이어 오브젝트 HP 확인 (디버깅용)
         }
         on_action = false;
     }
@@ -119,7 +124,7 @@ public class enemy : MonoBehaviour
         
         foreach (Collider2D collider in colliders)
         {
-            if (collider.gameObject != gameObject && collider.CompareTag("Ground")) 
+            if (collider.gameObject != gameObject && collider.CompareTag("Ground")) // 땅에 닿아있는지 체크
             {
                 isGrounded = true;
                 break;
@@ -133,8 +138,7 @@ public class enemy : MonoBehaviour
     IEnumerator JumpCoroutine()
     {
         on_action = true;
-        Debug.Log("JUMPING!");
-        animator.SetTrigger("Jump");
+        animator.SetTrigger("Jump"); // 점프 애니메이션
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         rb.AddForce(Vector2.right * flip * jumpForce*-0.3f, ForceMode2D.Impulse);
