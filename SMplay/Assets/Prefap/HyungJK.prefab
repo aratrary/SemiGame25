@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testing: 0
-  maxV: 7
+  maxV: 8
   StartJumppower: 8
-  Jumppower: 1.5
+  Jumppower: 1.7
   Wingpower: 5
   isGround: 0
   isJumping: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
   stickspawnX: 0
   stickspawnY: 0.3
   Stickanim: {fileID: 8391342196257337069}
-  Stickingpower1: 16
-  Stickingpower2: 23
+  Stickingpower1: 29
+  Stickingpower2: 26
   StickMask:
     serializedVersion: 2
     m_Bits: 8
@@ -521,7 +521,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.007834082}
