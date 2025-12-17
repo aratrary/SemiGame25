@@ -123,8 +123,8 @@ public class Moving : MonoBehaviour
             }
             StickingLevel = 0; // 스틱 밟기정도 초기화
             Stickanim.SetInteger("State", 0); // 스틱 애니메이션 변경 
-            mainCollider.offset = new Vector2(0, -0.01f); // 콜라이더 초기화
-            mainCollider.size = new Vector2(0.12f, 0.32f);
+            mainCollider.offset = new Vector2(0, -0.016f); // 콜라이더 초기화
+            mainCollider.size = new Vector2(0.19f, 0.501f);
         }
     }
     void Update()
@@ -145,8 +145,8 @@ public class Moving : MonoBehaviour
                     Ij = false; // 점프키같은거 없어야디
                     ChangeAnim(State.Sit_1); // 애니메이션 앉는거로 변경
                     Stickanim.SetInteger("State", 1); // 스틱 애니메이션 변경
-                    mainCollider.offset = new Vector2(0, -0.04f); // 이거랑 아래거는 콜라이더 크기 변경하는거임
-                    mainCollider.size = new Vector2(0.12f, 0.26f);
+                    mainCollider.offset = new Vector2(0, -0.06296875f); // 이거랑 아래거는 콜라이더 크기 변경하는거임
+                    mainCollider.size = new Vector2(0.19f, 0.4070625f);
                     if (testing) // 테스트기능이라는 뜻임
                     playerbody.position = new Vector3(Sticktrans.position.x, playerbody.position.y, 0); // 스틱 스프라이트와 형JK스프라이트 위치 맞추기
                 }

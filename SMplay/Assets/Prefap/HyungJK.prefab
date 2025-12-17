@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0020599961, y: -1.8171079, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3999687811554391946}
@@ -152,17 +152,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.01}
+  m_Offset: {x: 0, y: -0.016}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.4}
+    oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.12, y: 0.32}
+  m_Size: {x: 0.19, y: 0.501}
   m_EdgeRadius: 0
 --- !u!114 &758610198189969202
 MonoBehaviour:
@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testing: 0
-  maxV: 7
+  maxV: 8
   StartJumppower: 8
-  Jumppower: 1.5
+  Jumppower: 1.7
   Wingpower: 5
   isGround: 0
   isJumping: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
   stickspawnX: 0
   stickspawnY: 0.3
   Stickanim: {fileID: 8391342196257337069}
-  Stickingpower1: 16
-  Stickingpower2: 23
+  Stickingpower1: 29
+  Stickingpower2: 26
   StickMask:
     serializedVersion: 2
     m_Bits: 8
@@ -332,7 +332,7 @@ BoxCollider2D:
   m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000035038218, y: -0.0050221505}
+  m_Offset: {x: 0, y: -0.007834082}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -342,7 +342,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.12007433, y: 0.010044064}
+  m_Size: {x: 0.18725, y: 0.01566793}
   m_EdgeRadius: 0
 --- !u!251 &4429059727501605016
 PlatformEffector2D:
@@ -395,7 +395,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.70206, y: 0.41663, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5218152359147680188}
@@ -521,20 +521,20 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000035038218, y: -0.0050221505}
+  m_Offset: {x: 0, y: -0.007834082}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.4}
+    oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.12007433, y: 0.010044064}
+  m_Size: {x: 0.18725, y: 0.01566793}
   m_EdgeRadius: 0
 --- !u!95 &8391342196257337069
 Animator:

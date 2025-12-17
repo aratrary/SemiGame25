@@ -61,6 +61,7 @@ public class Stick : MonoBehaviour
         hitGround = false; // 땅 맞췄는지 초기화
         hittedEnemy = null; // 맞춘 적 ㅊㄱㅎ
         isFlying = true; // 날고있어
+        childcollider.isTrigger = false; // 플랫폼처럼 밟히는거 활성화
     }
     public void Returning() // 형JK쪽에 ㅌㄹㄱㄱ ㅇㅇ
     {
@@ -79,6 +80,7 @@ public class Stick : MonoBehaviour
         {
             isFlying = false; //일단 나는건 멈춰
             maincollider.isTrigger = true; // 맞는 판정은 이제 필요없어
+            rigid.linearVelocityX = 0;
             if (layer == enemyMask.value) // 적이 맞은거야?
             {
                 hitEnemy = true; // 적이 맞았다고 상태를 정하자
@@ -86,7 +88,6 @@ public class Stick : MonoBehaviour
             else if (layer == groundMask.value) // 땅이 맞은거야?
             {
                 hitGround = true; // 땅이 맞았다고 상태를 정하자
-                childcollider.isTrigger = false; // 플랫폼처럼 밟히는거 활성화
             }
         }
         
