@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -821.34, y: 119.32}
-  m_SizeDelta: {x: 238.5537, y: 59.147}
+  m_AnchoredPosition: {x: -740.8093, y: 119.32}
+  m_SizeDelta: {x: 399.615, y: 59.147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14641657
 MonoBehaviour:
@@ -1143,7 +1143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -812.63, y: -30.992}
+  m_AnchoredPosition: {x: -762, y: -30.992}
   m_SizeDelta: {x: 255.9765, y: 219.8881}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456602731
@@ -1440,8 +1440,7 @@ MonoBehaviour:
     dialogue:
       characterName: "\uB098\uB808\uC774\uC158"
       sentences:
-      - "\uADF8\uAC83\uC740 \uD55C\uD654 \uC774\uAE00\uC2A4\uC758 \uAEBE\uC5EC\uBC84\uB9B0
-        \uCE58\uD0A8 \uB0A0\uAC1C\uC600\uB2E4."
+      - "\uADF8\uAC83\uC740 \uBC14\uB85C \uD55C\uD654\uC774\uAE00\uC2A4\uC758 \uB2ED\uB0A0\uAC1C\uC600\uB2E4"
       characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -3185,7 +3184,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1216244692}
   - {fileID: 2141469064}
   m_Father: {fileID: 994360013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3474,6 +3472,7 @@ GameObject:
   - component: {fileID: 1216244694}
   - component: {fileID: 1216244693}
   - component: {fileID: 1216244695}
+  - component: {fileID: 1216244696}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -3493,7 +3492,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1069806088}
+  m_Father: {fileID: 1987979469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3582,6 +3581,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1216244696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216244691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1865f2a909ad9c94894510d69e05832e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 0}
+  requireDialogueActive: 1
 --- !u!1 &1249802470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,9 +3657,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1752333846}
-  - {fileID: 1987979469}
   - {fileID: 994360013}
   - {fileID: 430665277}
+  - {fileID: 1987979469}
   m_Father: {fileID: 1257058304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4757,8 +4770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.279907, y: 0}
-  m_SizeDelta: {x: 200, y: 43.1117}
+  m_AnchoredPosition: {x: -22.128, y: 0}
+  m_SizeDelta: {x: 329.744, y: 43.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583946686
 MonoBehaviour:
@@ -4847,7 +4860,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -1.7896118, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5208,7 +5221,93 @@ MonoBehaviour:
       sentences:
       - "\uC5B4\uCA54 \uC218 \uC5C6\uC9C0. \uC774 \uD3ED\uD0C4\uC73C\uB85C 5\uCE35\uC758
         \uC801\uB4E4\uC744 \uD574\uCE58\uC6B0\uC790."
+      - "\uC5B4? \uC800\uAC74?"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "emp\uD3ED\uD0C4\uC774 \uD130\uC9C0\uC790 \uC564\uB514\uB97C \uAC10\uC2F8\uACE0
+        \uC788\uB358 \uAC83\uC774 \uBC97\uACA8\uC84C\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uC5B4\uB9DB"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC774\uC790\uC2DD, \uAC10\uD788 \uC774\uB7F0 \uC9D3\uC744 \uBC8C@\uB824?"
+      - "\uBE14\uB9AC\uCE58\uC5D0\uC11C stop\uC744 \uBB50\uB77C\uACE0 \uD558\uB294\uC9C0
+        \uC54C\uC5B4?"
+      - "\uADF8'\uB9CC\uD574'(\u534D\u89E3)"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD06C\uC544\uC544\uC544\uC544\uC545!!!"
+      characterPortrait: {fileID: 1549169562487608561, guid: cb1f6a4ac404b0241b29ee0e13ba02c9, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uC564\uB514\uC758 \uD5C8\uB9AC\uAC00 \uD65C\uCC98\uB7FC \uD718\uC5B4\uC9C0\uBA70
+        5\uCE35\uC73C\uB85C \uB0A0\uC544\uAC14\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -5483,6 +5582,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647982848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1727752270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727752271}
+  m_Layer: 0
+  m_Name: AdangwanTransitionCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1727752271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727752270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 443.65897, y: 250.17735, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733806258
 GameObject:
@@ -6195,6 +6325,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 219506761}
+  - {fileID: 1216244692}
   m_Father: {fileID: 1254398735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6488,26 +6619,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: "\uC564\uB514"
-      sentences:
-      - "\uD6C4\uD6D7... \uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB2E4\uB2C8. '\uBC15\uC218'
-        \uCCD0\uB4DC\uB9AC\uACE0\uC2F6\uAD70\uC694."
-      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - isCutsceneOnly: 0
-    cutsceneDuration: 0
-    onCutscene:
-      m_PersistentCalls:
-        m_Calls: []
-    dialogue:
       characterName: JK
       sentences:
-      - "\uC5B4\uCA30\uC11C \uC774\uB7F0 \uC77C\uC744 \uBC8C1\uB9AC\uB294 \uAC70\uC9C0?
+      - "\uC564\uB514, \uC5B4\uC9F8\uC11C \uC774\uB7F0 \uC77C\uC744 \uBC8C@\uB9AC\uB294\uAC70\uC9C0?
         2\uD2B8"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
@@ -6524,28 +6638,8 @@ MonoBehaviour:
     dialogue:
       characterName: "\uC564\uB514"
       sentences:
-      - "\uD6C4\uD6D7... "
-      - "\uBD81\uC77C\uACE0\uB294 '\uBC1C\uC804' \uC774 \uC5C6\uC5C8\uC2B5\uB2C8\uB2E4. "
-      - "\uC608\uB97C\uB4E4\uC5B4... \uAD6C\uC2DC\uB300\uC801 \uC720\uBB3C\uC778
-        '3\uD559\uB144 21\uC2DC \uC774\uD6C4 \uC678\uBC15', '\uC57C\uAC04\uC790\uC2B5
-        11\uC2DC 30\uBD84\uAE4C\uC9C0', \uAE30\uD0C0\uB4F1\uB4F1..."
+      - "\uB0B4\uAC00 \uBC8C@\uB9B0 \uC77C\uC774 \uC544\uB2C8\uC57C \u3160\u3160"
       characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - isCutsceneOnly: 0
-    cutsceneDuration: 0
-    onCutscene:
-      m_PersistentCalls:
-        m_Calls: []
-    dialogue:
-      characterName: "\uB3C4\uC9F1"
-      sentences:
-      - "\uC791\uB144\uC5D0 \uAC74\uC758\uD588\uB2E4\uAC00 \uBAA8\uB450 \uBE60\uAFB8\uBA39\uC740\uAC83\uB4E4\uBFD0\uC774\uC796\uC544..."
-      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -6560,8 +6654,7 @@ MonoBehaviour:
     dialogue:
       characterName: JK
       sentences:
-      - "\uADF8'\uB9CC\uD574'\uB77C. \uB108\uB294 \uC774\uBBF8 \uB3CC\uC774\uD0AC
-        \uC218 \uC5C6\uB294 \uAC15\uC744 \uAC74\uB11C\uB2E4."
+      - "\uB204\uAC00 \uBC8C@\uB9B0 \uC77C\uC774\uC9C0?"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6577,8 +6670,7 @@ MonoBehaviour:
     dialogue:
       characterName: "\uC564\uB514"
       sentences:
-      - "\uD6C4\uD6D7..."
-      - "\uB3CC\uC774\uD0AC \uC218 \uC5C6\uB2E4\uBA74..."
+      - ...
       characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6592,12 +6684,42 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: "\uC564\uB514"
+      characterName: "\uC564\uB514(\uC0AC\uC2E4 \u3137\u3139)"
       sentences:
-      - "\uBD80\uC234\uBC84\uB9AC\uB294 \uC218\uBC16\uC5D0..."
-      - "\uC18C\uAC1C\uD574\uB4DC\uB9AC\uC8E0. \uC81C \uCD5C\uC885\uBCD1\uAE30..."
-      - "<\uB9C9\uC2DC\uBB34\uC2A4 The \uC544\uB2E8\uAD00>\uC785\uB2C8\uB2E4."
-      characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
+      - "\uC564\uB514\uB2E4."
+      characterPortrait: {fileID: 8674004246529306686, guid: f6c0f5c8be65897408d3a05919eb7143, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1(\uC0AC\uC2E4 \uC564\uB514)"
+      sentences:
+      - "\uD6C4\uD6D7"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - ?!
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -6612,7 +6734,7 @@ MonoBehaviour:
     dialogue:
       characterName: "\uB098\uB808\uC774\uC158"
       sentences:
-      - "\uADF8\uB7EC\uB098 \uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0 \uC54A\uC558\uB2E4"
+      - "\uC564\uB514\uB294 JK\uB97C \uBC00\uC5C8\uB2E4."
       characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6626,11 +6748,209 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: "\uB3C4\uC9F1"
+      characterName: JK
       sentences:
-      - ...
-      - "\uC544\uB9C8... emp\uD3ED\uD0C4\uB54C\uBB38\uC5D0 5\uCE35\uC758 \uC804\uC790\uAE30\uAE30\uB294
-        \uC791\uB3D9\uD558\uC9C0 \uC54A\uC744\uAC78\uC694?"
+      - "\uB098\uB791 \uAC19\uC774\uB2E4\uB2C8\uB358 \uB3C4\uC9F1\uC774 \uC0AC\uC2E4
+        \uC564\uB514\uC600\uB2E4\uB2C8..."
+      - "\uC774\uB7F4 \uC2DC\uAC04 \uC5C6\uC9C0 \uB3C4\uC9F1(\uC9C4)\uC740 \uB098\uC5D0\uAC8C
+        \uC774\uAC83\uC744 \uC8FC\uC5C8\uB2E4\uACE0"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "JK\uB294 \uC790\uC2A4\uD2F1\uC744 2\uCE35 \uBCBD\uC5D0 \uB358\uC9C0\uACE0
+        \uADF8 \uBC18\uB3D9\uC73C\uB85C 5\uCE35\uC73C\uB85C \uC810\uD504\uD55C\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uC544\uB2DB \uC0B4\uC544\uC788\uB2E4\uB2C8"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\u3137\u3139"
+      sentences:
+      - "\uC564\uB514 \uBE68\uB9AC \uC228\uC5B4!"
+      characterPortrait: {fileID: 8674004246529306686, guid: f6c0f5c8be65897408d3a05919eb7143, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uC564\uB514\uB294 \uC625\uC0C1 \uBB38\uC744 \uAD73\uAC8C \uC7A0\uAD9C\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\u3137\u3139"
+      sentences:
+      - "\uD558\uD56B! \uADF8\uAC74 \uC548\uD2F0 JK\uC6A9\uC73C\uB85C \uB9CC\uB4E0
+        \uCCA0\uBB38\uC774\uB2E4 JK\uB9CC \uBABB\uC5F4\uC9C0"
+      characterPortrait: {fileID: 8674004246529306686, guid: f6c0f5c8be65897408d3a05919eb7143, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uD760 \uADF8\uB807\uAD70 (\uADFC\uC721\uB1CC ON)"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\u3137\u3139"
+      sentences:
+      - "\uC564\uB514 \uBE68\uB9AC <\uB9C9\uC2DC\uBB34\uC2A4 the \uC544\uB2E8\uAD00>\uC744
+        \uC791\uB3D9\uC2DC\uCF1C!!"
+      characterPortrait: {fileID: 8674004246529306686, guid: f6c0f5c8be65897408d3a05919eb7143, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uC5B4? \uC65C \uC548\uB418\uC9C0? "
+      - "...\uC544 \uB9DE\uB2E4 emp!! (\uC564\uB514\uB1CC ON)"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC5D0\uD734 \uBE05\uC2E0\uB4E4"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uADF8\uB54C, JK\uC804\uC6A9\uC790\uC11D\uC5D0 \uB3C4\uC9F1 \uC804\uC6A9\uC790\uC11D\uC774
+        \uBD99\uC5C8\uB2E4. \uADF8\uACF3\uC5D0\uB294 \uD55C \uCABD\uC9C0\uAC00 \uC788\uC5C8\uB2E4."
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uC774\uAC83\uC740...!"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1(\uACFC\uAC70\uD68C\uC0C1)"
+      sentences:
+      - "\uC774\uC775 \uC774\uAC70 \uB194!"
       characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6644,12 +6964,10 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: "\uC564\uB514"
+      characterName: "\uC564\uB514(\uACFC\uAC70\uD68C\uC0C1)"
       sentences:
-      - "\u3131\u3161"
-      - "\uC2DC\uBC1C \uADF8\uB807\uB2E4\uBA74 \uB0B4 \uCC28\uC885\uBCD1\uAE30 <Andy
-        'the me' hwang>\uB2E4"
-      characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
+      - "\uC6C5\uD788\uD788"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -6662,9 +6980,64 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: "\uC564\uB514"
+      characterName: "\uB3C4\uC9F1(\uACFC\uAC70\uD68C\uC0C1)"
       sentences:
-      - "\uADF8\uBB54\uC539"
+      - "\uAC07\uD614\uC11C \u315C.\u315C"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uAC00\uC9DC\uB3C4\uC9F1(\uC564\uB514)(\uACFC\uAC70\uD68C\uC0C1)"
+      sentences:
+      - "(\uD478\uC29B) (\uD638\uBC14\uBC14\uBC27) (\uD391)"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1(\uACFC\uAC70\uD68C\uC0C1)"
+      sentences:
+      - "\uACE0\uC804\uC555\uC2E4\uB85C \uAC00\uB294 \uAE38\uC774 \uC0DD\uACBC\uC5B4!"
+      - "\uC557, \uB204\uAC00 \uC544\uB2E8\uAD00 \uC640\uC774\uD30C\uC774\uB85C \uBE44\uD2B8\uCF54\uC778\uC744
+        \uCE90\uC11C \uACFC\uBD80\uD558\uAC00 \uAC78\uB838\uC796\uC544?!"
+      - "3\uCE35\uACFC 4\uCE35\uC758 \uC8FC \uC5F0\uACB0\uC744 \uBD80\uC218\uBA74
+        \uBAA8\uB4E0 \uC2DC\uC2A4\uD15C\uC774 \uB05D\uB098!"
+      - "\uC774\uAC78 \uC54C\uB824\uC57C\uD574!"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "JK(\uD604\uC7AC)"
+      sentences:
+      - "\uB3C4\uB07C\uC58F\uD638\uC6B0 \uC5ED\uC2DC \uB3C4\uC9F1\uC774\uC57C"
+      - "...\uADF8\uB0E5 \uACE0\uC804\uC555\uC2E4\uC744 \uBD80\uC218\uBA74 \uB418\uC796\uC544
+        \uB0B4\uAC00 \uC65C \uADF8\uC0DD\uAC01\uC744 \uBABB\uD588\uC9C0?"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -6680,8 +7053,44 @@ MonoBehaviour:
     dialogue:
       characterName: "\uC564\uB514"
       sentences:
-      - "\uB098\uB2E4"
-      characterPortrait: {fileID: -5389624647514649860, guid: 9c09d6ca65b15bf43a2de9205301433a, type: 3}
+      - "\uC88B\uC544 \uD55C\uB2EC\uC5D0 900\uC6D0\uD558\uB294 \uC54C\uB730\uD3F0
+        \uB370\uC774\uD130\uB97C \uCF30\uB2E4"
+      - " \uC774\uC815\uB3C4\uBA74 \uB85C\uBD07\uB4E4\uC774\uB791 \uB85C\uBD07\uD314\uC744
+        \uC6C0\uC9C1\uC77C \uC218 \uC788\uACA0\uC5B4"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: JK
+      sentences:
+      - "\uD6C4\uD6D7 \uADF8\uB807\uAC8C\uB294 \uC548\uB41C\uB2E4"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: '  '
+      sentences:
+      - "\uC9C0\uD558 1\uCE35\uC73C\uB85C \uAC00\uC11C \uACE0\uC804\uC555\uC2E4\uC744
+        \uBD80\uC234\uB77C!"
+      characterPortrait: {fileID: 0}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -6817,7 +7226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.4629, y: -30.992}
+  m_AnchoredPosition: {x: 115, y: -35}
   m_SizeDelta: {x: 1281.9, y: 232.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141469065
@@ -6939,3 +7348,4 @@ SceneRoots:
   - {fileID: 2086727729}
   - {fileID: 1373982884}
   - {fileID: 521259323}
+  - {fileID: 1727752271}

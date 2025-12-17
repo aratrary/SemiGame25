@@ -253,9 +253,6 @@ public class DialogueSystem : MonoBehaviour
             Debug.Log("dialoguePanel을 비활성화합니다.");
             dialoguePanel.SetActive(false);
         }
-        // UI 요소들 비활성화
-        Debug.Log("dialoguePanel을 비활성화합니다.");
-        dialoguePanel.SetActive(false);
         if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 확실히 끔
         currentUIState = UIState.None; // 대화 종료하면 UI 상태는 None
         if (continueIndicator != null)
@@ -279,6 +276,28 @@ public class DialogueSystem : MonoBehaviour
         
         // 대화 종료 이벤트
         OnDialogueEnd();
+    }
+
+    /// <summary>
+    /// UI 버튼에서도 호출 가능하도록 공개한 진행 메서드
+    /// </summary>
+    public void AdvanceDialogueViaButton()
+    {
+        if (!dialogueActive)
+        {
+            Debug.LogWarning("대화가 활성화되어 있지 않아 버튼 입력을 무시합니다.");
+            return;
+        }
+        Debug.Log("AdvanceDialogueViaButton 호출됨");
+        HandleSpacebarInput();
+    }
+
+    /// <summary>
+    /// 버튼 OnClick 연결 여부를 빠르게 확인하기 위한 디버그용 메서드
+    /// </summary>
+    public void DebugButtonPing()
+    {
+        Debug.Log("DialogueSystem DebugButtonPing - OnClick 연결 확인됨");
     }
     #endregion
     
