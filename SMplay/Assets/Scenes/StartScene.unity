@@ -212,9 +212,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4699369109864181041, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.18724996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699369109864181041, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01566793
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699369109864181041, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.000023558736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699369109864181041, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0078340825
+      objectReference: {fileID: 0}
     - target: {fileID: 5024079985431199069, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
       propertyPath: m_Name
       value: HyungJK
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069848064940707279, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069848064940707279, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4070625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069848064940707279, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539659032465844155, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800537205113539769, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800537205113539769, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532495633999099495, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.18725
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532495633999099495, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01566793
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532495633999099495, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00002355874
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532495633999099495, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.007834082
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
