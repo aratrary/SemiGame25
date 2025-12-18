@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,6 +53,11 @@ namespace EasyTransition
         [Space(10)]
         public GameObject transitionIn;
         public GameObject transitionOut;
+
+        public static implicit operator TransitionSettings(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum ColorTintMode { Multiply, Add }

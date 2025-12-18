@@ -27,8 +27,9 @@ public class CameraMove : MonoBehaviour
     void LateUpdate() // 플레이어 움직임 -> 카메라이동 이렇게해야 움직임에 버그 안난대요
     {
         // 경계 밖에선 y좌표만 따라가기, 경계 안에선 xyz 다따라가기(z는의미없음)
-        if (LeftCameraBound >= player.transform.position.x || RightCameraBound <= player.transform.position.y)
-            dir = new(0, player.transform.position.y - this.transform.position.y + 2, 0);
+        if (LeftCameraBound >= player.transform.position.x || RightCameraBound <= player.transform.position.x)
+            {//Debug.Log("BOUNDS");
+            dir = new(0, player.transform.position.y - this.transform.position.y + 2, 0);}
         else
             dir = player.transform.position - this.transform.position + new Vector3(0, 2, 0);
 
