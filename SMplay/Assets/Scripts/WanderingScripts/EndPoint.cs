@@ -1,21 +1,24 @@
-using EasyTransition;
-using NUnit.Framework;
+using System;
 using UnityEngine;
 
 public class EndPoint : MonoBehaviour
 {
-    bool isLoading;
-    public string how_transition = "Fade";
-
+    public Transition transition;
+    public string sceneName = "MainMenu"; // 디폴트값
+    public float duration = 1f;
+/*
+    private void Awake()
+    {
+        transition = transform.root.GetComponentInChildren<Transition>(true);
+    }
+*/
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("퍼리퍼리");
-        if (isLoading) return;
         if (!collision.CompareTag("Player")) return;
 
-        isLoading = true;
-        TransitionManager.Instance().Transition("F2", how_transition, 0f);
-
-        Debug.Log("퍼리");
+        if (transition != null)
+        {
+            transition.Falling(sceneName, duration);
+        }
     }
 }
