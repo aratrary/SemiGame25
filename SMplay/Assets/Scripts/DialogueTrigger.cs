@@ -208,13 +208,24 @@ public class DialogueTrigger : MonoBehaviour
         
         foreach (DialogueSequence sequence in dialogueSequences)
         {
-            // 컷씬 처리
+            // 컷씬 전용 모드 (대화 없이 컷씬만)
             if (sequence.isCutsceneOnly)
             {
+                Debug.Log($"=== 컷씬 전용 모드 ===");
+                Debug.Log($"컷씬 Duration 설정값: {sequence.cutsceneDuration}초");
+                
                 sequence.onCutscene?.Invoke();
+                Debug.Log($"onCutscene 이벤트 실행됨");
+                
                 if (sequence.cutsceneDuration > 0f)
                 {
+                    Debug.Log($"{sequence.cutsceneDuration}초 대기 시작...");
                     yield return new WaitForSeconds(sequence.cutsceneDuration);
+                    Debug.Log($"=== {sequence.cutsceneDuration}초 대기 완료 ===");
+                }
+                else
+                {
+                    Debug.LogWarning("cutsceneDuration이 0 이하입니다! 컷씬 스킵됨");
                 }
                 continue;
             }
@@ -228,6 +239,18 @@ public class DialogueTrigger : MonoBehaviour
             
             dialogueIndex++;
             bool isLastDialogue = (dialogueIndex >= totalDialogues);
+            
+            // 컷씬과 대화 동시 실행 (onCutscene 이벤트가 있으면 실행)
+            Debug.Log($"onCutscene 체크 중... (null: {sequence.onCutscene == null})");
+            if (sequence.onCutscene != null)
+            {
+                Debug.Log($"=== 컷씬 + 대화 동시 실행 ===");
+                sequence.onCutscene.Invoke();
+            }
+            else
+            {
+                Debug.LogWarning("onCutscene이 null입니다. 컷씬 없이 대화만 진행합니다.");
+            }
             
             // 대화 시작 (첫 대화 아니면 패널 유지)
             bool keepPanelOpen = (dialogueIndex > 1);
