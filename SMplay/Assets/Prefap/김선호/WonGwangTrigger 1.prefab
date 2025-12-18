@@ -155,26 +155,10 @@ MonoBehaviour:
       sentences:
       - "\uC624, \uACE0\uB9D9\uB124. "
       - "\uB108\uD76C\uB4E4\uC774 \uBAA8\uB97C \uBE44\uBC00\uC744 \uC54C\uB824\uC8FC\uB3C4\uB85D\uD558\uC9C0..."
-      - "\uD669\uC720\uCC2C\uAD70\uC774 \uBAA8\uB4E0 \uC77C\uC758 \uD751\uB9C9\uC774\uC5C8\uB2E4!"
+      - "\uD669\uC720\uCC2C\uAD70\uC774 \uC544\uB2E8\uAD00\uC744 \uAC1C\uC870\uD574\uC11C
+        \uB85C\uBD07\uC73C\uB85C \uB9CC\uB4E4\uC5C8\uC9C0."
+      - "\uC564\uB514\uB294 \uBD81\uC77C\uACE0\uB97C \uBA78\uB9DD\uC2DC\uD0A4\uB824\uB294\uAC83\uC774\uB2E4!"
       characterPortrait: {fileID: -4810414901705192875, guid: a37b0d8f51fa8724a828b901893da918, type: 3}
-    disableTriggerBefore: {fileID: 0}
-    enableTriggerAfter: {fileID: 0}
-    setDialogueData:
-      characterName: 
-      sentences: []
-      characterPortrait: {fileID: 0}
-  - isCutsceneOnly: 0
-    cutsceneDuration: 0
-    onCutscene:
-      m_PersistentCalls:
-        m_Calls: []
-    dialogue:
-      characterName: "\uB098\uB808\uC774\uC158"
-      sentences:
-      - "\uD669\uC720\uCC2C\uAD70\uC774... \uD559\uBE44\uB85C \uC544\uB2E8\uAD00\uC744
-        \uB85C\uBD07\uC73C\uB85C \uAC1C\uC870\uD55C\uAC83\uC774\uB2E4!"
-      - "\uD669\uC720\uCC2C\uAD70\uC774 \uBAA8\uB4E0 \uC77C\uC758 \uD751\uB9C9\uC774\uC5C8\uB2E4!"
-      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -203,7 +187,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: "\uC815\uC6D0\uAD11"
+      characterName: "\uC815\uC6D0\uAD11T"
       sentences:
       - "(\uC2DC\uBB34\uB8E9)"
       - "\uADF8\uB7FC \uB09C \uC5EC\uAE30\uC11C \uB9CC\uB4E0 emp\uD3ED\uD0C4\uACFC
@@ -375,7 +359,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: JK
+      characterName: "\uD615JK"
       sentences:
       - "\uC5B4\uCA54 \uC218 \uC5C6\uC9C0. \uC774 \uD3ED\uD0C4\uC73C\uB85C 5\uCE35\uC758
         \uC801\uB4E4\uC744 \uD574\uCE58\uC6B0\uC790."
@@ -507,6 +491,7 @@ MonoBehaviour:
       sentences: []
       characterPortrait: {fileID: 0}
   delayBetweenDialogues: 0
+  autoStartOnLoad: 1
   interactionKey: 101
   autoTrigger: 0
   oneTimeOnly: 0

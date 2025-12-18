@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[DefaultExecutionOrder(-100)]
 public class GameStarter : MonoBehaviour
 {
     public DialogueSystem dialogueSystem;
@@ -15,6 +16,33 @@ public class GameStarter : MonoBehaviour
     [Tooltip("각 대화 사이 대기 시간 (초)")]
     public float delayBetweenDialogues = 0.5f;
     
+    void Awake()
+    {
+        // 인스펙터가 비어있다면 자동으로 DialogueSystem 연결
+        if (dialogueSystem == null)
+        {
+            DialogueSystem preferred = null;
+            var systems = FindObjectsOfType<DialogueSystem>(true);
+            foreach (var s in systems)
+            {
+                var n = s.gameObject.name.ToLowerInvariant();
+                if (n.Contains("dialoguemanager")) { preferred = s; break; }
+            }
+            if (preferred == null && systems.Length > 0) preferred = systems[0];
+
+            dialogueSystem = preferred;
+
+            if (dialogueSystem != null)
+            {
+                Debug.Log($"GameStarter: DialogueSystem 자동 할당됨 -> {dialogueSystem.gameObject.name}");
+            }
+            else
+            {
+                Debug.LogError("GameStarter: 씬에서 DialogueSystem을 찾지 못했습니다. 'DialogueManager' 오브젝트 또는 DialogueSystem 컴포넌트를 확인하세요.");
+            }
+        }
+    }
+
     void Start()
     {
         StartCoroutine(StartSequence());
@@ -22,6 +50,19 @@ public class GameStarter : MonoBehaviour
        
     IEnumerator StartSequence()
     {
+        // 실행 직전에도 한 번 더 보강
+        if (dialogueSystem == null)
+        {
+            dialogueSystem = FindObjectOfType<DialogueSystem>();
+            if (dialogueSystem != null)
+                Debug.Log($"GameStarter: Start 시점에 DialogueSystem 재할당 -> {dialogueSystem.gameObject.name}");
+            else
+            {
+                Debug.LogError("GameStarter: DialogueSystem이 없어 시퀀스를 시작할 수 없습니다.");
+                yield break;
+            }
+        }
+
         int dialogueIndex = 0;
         int totalDialogues = 0;
         

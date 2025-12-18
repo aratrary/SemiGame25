@@ -17,6 +17,10 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("각 대화 사이 대기 시간 (초)")]
     public float delayBetweenDialogues = 0.5f;
     
+    [Header("자동 시작")]
+    [Tooltip("씬 시작 시 자동으로 대화를 시작할지 여부")]
+    public bool autoStartOnLoad = true;
+    
     [Header("상호작용 설정")]
     [HideInInspector]
     [Tooltip("상호작용 키 (기본값: E키) - 현재 비활성화됨")]
@@ -63,6 +67,13 @@ public class DialogueTrigger : MonoBehaviour
         }
         
         ValidateTriggerSetup();
+        
+        // 씬 시작 시 자동으로 대화 시작
+        if (autoStartOnLoad && CanTriggerDialogue())
+        {
+            Debug.Log($"{gameObject.name}: 씬 시작 시 자동으로 대화를 시작합니다.");
+            TriggerDialogue();
+        }
     }
     
     void Update()
