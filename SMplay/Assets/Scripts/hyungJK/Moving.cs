@@ -126,7 +126,7 @@ public class Moving : MonoBehaviour
         if (StickKey)
         {
             StickKey = false;
-            if (StickingLevel <1)
+            if (StickingLevel <0.7)
             {
                 rigid.AddForce(Vector2.up * Stickingpower1, ForceMode2D.Impulse); // 1단계 스틱점프
             } 
@@ -171,7 +171,7 @@ public class Moving : MonoBehaviour
             if (!Ist)
                 Ist = true; // 일단 이거 실행중이라는 뜻
         
-            if (StickingLevel < 1)
+            if (StickingLevel < 0.7)
             {
                 if (StickingLevel == 0)
                 {
