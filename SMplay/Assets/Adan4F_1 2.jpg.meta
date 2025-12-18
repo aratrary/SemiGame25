@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8b20a8029487e1b4a9830eea902135fb
+guid: 6981d0dc7b9df3a4db40bd50df093143
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1978671492081026059
-    second: Adan4F_1_0
+      213: -3923385597718305172
+    second: Adan4F_1 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Adan4F_1_0
+      name: Adan4F_1 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 4000
-        height: 3000
+        height: 712
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b048ea41d37a57b10800000000000000
-      internalID: 1978671492081026059
+      spriteID: c66ed1bf5955d89c0800000000000000
+      internalID: -3923385597718305172
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Adan4F_1_0: 1978671492081026059
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
