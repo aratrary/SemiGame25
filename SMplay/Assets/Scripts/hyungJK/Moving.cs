@@ -73,6 +73,7 @@ public class Moving : MonoBehaviour
         anim = GetComponent<Animator>();
 
         Jpower = Jumppower;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
