@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework.Constraints;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -10,12 +11,19 @@ public class CameraMove : MonoBehaviour
     //camera speed임 미니언아님
     public float cs = 5f; 
     
-    // 카메라 경계(왼쪽/오른쪽)
-    public float LeftCameraBound = -15;
-    public float RightCameraBound = 9999;
+    // 카메라 경계(왼쪽/오른쪽), 물음표는 null이 될수있음을 의미(이러면 기본값 null)
+    public float? LeftCameraBound;
+    public float? RightCameraBound;
     
     private Vector3 dir; //카메라 움직여야하는 방향(player-camera로 구함)
 
+    void Start()
+    {
+        // Bound값이 null이면 강제로 맨왼쪽 맨오른쪽으로 바꿈
+        LeftCameraBound ??= -9999;
+        RightCameraBound ??= 9999;
+        
+    }
     void LateUpdate() // 플레이어 움직임 -> 카메라이동 이렇게해야 움직임에 버그 안난대요
     {
         // 경계 밖에선 y좌표만 따라가기, 경계 안에선 xyz 다따라가기(z는의미없음)
