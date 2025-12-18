@@ -203,7 +203,7 @@ MonoBehaviour:
   stickspawnX: 0
   stickspawnY: 0.3
   Stickanim: {fileID: 8391342196257337069}
-  Stickingpower1: 29
+  Stickingpower1: 19
   Stickingpower2: 26
   StickMask:
     serializedVersion: 2

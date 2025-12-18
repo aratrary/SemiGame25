@@ -11,17 +11,17 @@ public class CameraMove : MonoBehaviour
     //camera speed임 미니언아님
     public float cs = 5f; 
     
-    // 카메라 경계(왼쪽/오른쪽), 물음표는 null이 될수있음을 의미(이러면 기본값 null)
-    public float? LeftCameraBound;
-    public float? RightCameraBound;
+    // 0이어도 0.01같이 해놔야합니다 안그럼 초기화되어서 9999됨
+    public float LeftCameraBound = 0;
+    public float RightCameraBound = 0;
     
     private Vector3 dir; //카메라 움직여야하는 방향(player-camera로 구함)
 
     void Start()
     {
-        // Bound값이 null이면 강제로 맨왼쪽 맨오른쪽으로 바꿈
-        LeftCameraBound ??= -9999;
-        RightCameraBound ??= 9999;
+        // Bound값이 0이면 강제로 맨왼쪽 맨오른쪽으로 바꿈
+        if (LeftCameraBound == 0) LeftCameraBound = -9999;
+        if (RightCameraBound == 0) RightCameraBound = 9999;
         
     }
     void LateUpdate() // 플레이어 움직임 -> 카메라이동 이렇게해야 움직임에 버그 안난대요
