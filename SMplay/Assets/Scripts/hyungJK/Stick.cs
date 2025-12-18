@@ -22,6 +22,7 @@ public class Stick : MonoBehaviour
     public GameObject JK; // JK
     public Transform JKtrans; // 사실 JK 트랜스임ㄷㄷ
     public float returningspeed; // 돌아가는속도
+    public enemy Enemyscript;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -60,6 +61,7 @@ public class Stick : MonoBehaviour
         hitEnemy = false; // 적 맞췄는지 초기화
         hitGround = false; // 땅 맞췄는지 초기화
         hittedEnemy = null; // 맞춘 적 ㅊㄱㅎ
+        Enemyscript = null;
         isFlying = true; // 날고있어
         childcollider.isTrigger = false; // 플랫폼처럼 밟히는거 활성화
     }
@@ -67,6 +69,7 @@ public class Stick : MonoBehaviour
     {
         if (isReturning) // 이미 돌아가는중이면 말고
             return;
+        rigid.gravityScale = 0;
         isReturning = true; // 돌아가는중이야
         childcollider.isTrigger = true; // 플랫폼처럼 밟히는건 끄자
         maincollider.isTrigger = true; // 맞는 판정 없애기
@@ -84,6 +87,10 @@ public class Stick : MonoBehaviour
             if (layer == enemyMask.value) // 적이 맞은거야?
             {
                 hitEnemy = true; // 적이 맞았다고 상태를 정하자
+                hittedEnemy = collision.gameObject;
+                Enemyscript = hittedEnemy.GetComponent<enemy>();
+                Enemyscript.Death();
+                rigid.gravityScale = 1;
             }
             else if (layer == groundMask.value) // 땅이 맞은거야?
             {

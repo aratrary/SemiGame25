@@ -60,7 +60,11 @@ public class Moving : MonoBehaviour
     public int Stickface; // stick이 바라보는 방향
     public Transform Sticktrans; // 사실 스틱 트랜스임ㄷㄷ
 
+    [Header("체력")]
 
+    public int currentHealth = 5;
+
+    public float ?testing1 = null;
 
     void Awake()
     {
@@ -129,6 +133,12 @@ public class Moving : MonoBehaviour
     }
     void Update()
     {
+        /* if (transform.position.y > testing1 || testing1 == null)
+        {
+            testing1 = transform.position.y;
+            Debug.Log(testing1);
+        } */
+
         CheckGrounded_BoxCast(); //isGround 체킹 + 밑이 스틱인지 체킹
 
         if (Input.GetButton("Vertical") && Stickable) // 아래로 누르고 있고 스틱점프가 가능하다면
@@ -147,8 +157,8 @@ public class Moving : MonoBehaviour
                     Stickanim.SetInteger("State", 1); // 스틱 애니메이션 변경
                     mainCollider.offset = new Vector2(0, -0.06296875f); // 이거랑 아래거는 콜라이더 크기 변경하는거임
                     mainCollider.size = new Vector2(0.19f, 0.4070625f);
-                    if (testing) // 테스트기능이라는 뜻임
-                    playerbody.position = new Vector3(Sticktrans.position.x, playerbody.position.y, 0); // 스틱 스프라이트와 형JK스프라이트 위치 맞추기
+                    //if (testing) // 테스트기능이라는 뜻임
+                    //playerbody.position = new Vector3(Sticktrans.position.x, playerbody.position.y, 0); // 스틱 스프라이트와 형JK스프라이트 위치 맞추기
                 }
                 StickingLevel += Time.deltaTime; // 스틱정도 시간에 따라 조절
             }
@@ -267,6 +277,16 @@ public class Moving : MonoBehaviour
 
     }
 
+    public void TakeDamage()
+    {
+        currentHealth -= 1;
+        Debug.Log(currentHealth);
+    }
+
+    public void resetHealth()
+    {
+        currentHealth = 5;
+    }
     public void AnimationUpdate()
     {
         if (havingStick && !CatchAnimationDummy) // 스틱이 있는데 아직 더미가 안켜졌네

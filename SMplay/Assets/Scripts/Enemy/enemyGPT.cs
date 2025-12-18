@@ -1,17 +1,17 @@
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections;
-public class enemy : MonoBehaviour
+public class enemyGPT : MonoBehaviour
 {
     public float speed; //이동속도, Inspector 창에서 설정
-    bool isLive = true;
+    bool isLive;
     bool on_action;
     public int jumpForce = 7; // (현재 사용 안 함) 점프 제거했지만, 변수/코루틴은 원본 유지
     Rigidbody2D rb;
     public Rigidbody2D target;
     private Collider2D col;
     public float attack_dmg; // 공격력, Inspector 창에서 설정
-    public Moving playerHealth; // PlayerHealthController에서 플레이어 피 가져오는 용도
+    public PlayerHealthController playerHealth; // PlayerHealthController에서 플레이어 피 가져오는 용도
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f; // 땅바닥에 닿은걸로 치는 거리
@@ -27,14 +27,6 @@ public class enemy : MonoBehaviour
     public float flip = 1f;
     private Collider2D targetCollider;
     Vector2 hor;
-
-    public float attackdelay;
-    public float attackdelaydummy;
-    public bool attacking;
-    public float agrowexitdis;
-    public float agrowenterdis;
-    public float shotdelay;
-    public int Health;
 
     // ===================== [추가] 플랫폼 끝/앞막힘 멈춤용 =====================
     [Header("Edge Stop Sensors")]
@@ -59,7 +51,6 @@ public class enemy : MonoBehaviour
 
     void Start()
     {
-        isLive = true;
         on_action = false;
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -92,13 +83,12 @@ public class enemy : MonoBehaviour
         // =====================================================================
 
         animator = GetComponent<Animator>();
+        float EnemyMaxHealth = 100f;
+        float EnemyCurrentHealth = EnemyMaxHealth;
     }
 
     void Update()
     {
-        if (isLive == false)
-            return;
-
         Vector2 dist = (Vector2)target.position - (Vector2)transform.position;
 
         if (!on_action)
@@ -109,7 +99,7 @@ public class enemy : MonoBehaviour
             Follow(horizontal, new Vector2(0f, dist.y)); // Follow => 플레이어 쫓아가기
 
             // ===================== [수정] 멈춤 상태면 Idle, 아니면 Run =====================
-            if (horizontal.magnitude > agrowenterdis)
+            if (horizontal.magnitude > 20.0f)
             {
                 animator.SetInteger("State", 0);
             }
@@ -119,7 +109,7 @@ public class enemy : MonoBehaviour
             }
             else
             {
-                if (animator.GetInteger("State") != 1 && !attacking)
+                if (animator.GetInteger("State") != 1)
                     animator.SetInteger("State", 1);
             }
             // =====================================================================
@@ -142,7 +132,7 @@ public class enemy : MonoBehaviour
     {
         blockedByEdge = false; // 기본은 이동 가능
 
-        if (horizontal.magnitude <= agrowenterdis && !attacking)
+        if (horizontal.magnitude <= 20.0f && horizontal.magnitude > stop_dist)
         {
             // ===================== [추가] 플랫폼 끝/앞막힘이면 이동 금지 =====================
             int dir = (horizontal.x >= 0f) ? 1 : -1;
@@ -155,44 +145,14 @@ public class enemy : MonoBehaviour
 
             transform.position += (Vector3)(horizontal.normalized * speed * Time.deltaTime);
         }
-        if (horizontal.magnitude <= stop_dist && vertical.y < 1 && playerHealth.isGround == true) //플레이어와 일정 거리만큼 가까워지면 공격하기
+        else if (horizontal.magnitude <= stop_dist && vertical.y < 1) //플레이어와 일정 거리만큼 가까워지면 공격하기
         {
-            attacking = true;
+            Attack();
         }
-        else if (attacking &&(!(hor.magnitude <= agrowexitdis) || vertical.y > 2.21 || (vertical.y > 1 && playerHealth.isGround == true)))
-        {
-            attacking = false;
-            attackdelay = 0;
-        }
-        
 
         // ===================== [수정] 점프 로직 호출 제거 =====================
         // if (vertical.y>=1 && horizontal.magnitude<=3f) ... Jump();  <= 삭제(행동만 제거)
         // =====================================================================
-    }
-
-    void FixedUpdate()
-    {
-        if (isLive == false)
-            return;
-        attackdelaydummy = (attackdelay <= 0f) ? 0f : (attackdelay >= shotdelay) ? shotdelay : attackdelay;
-        spriteRenderer.color = new Color(1f, (shotdelay-attackdelaydummy)/shotdelay, (shotdelay-attackdelaydummy)/shotdelay, 1f);
-        if (attacking)
-        {
-            animator.SetInteger("State", 2); // 공격 애니메이션
-            attackdelay += Time.fixedDeltaTime;
-            if (attackdelay >= shotdelay)
-            {
-                attackdelay -= shotdelay;
-                playerHealth.TakeDamage();
-                if (!(hor.magnitude <= stop_dist))
-                {
-                    attacking = false;
-                    attackdelay = 0;
-                }
-            }
-        }
-        
     }
 
     // ===================== [추가] edge-stop 핵심 로직 =====================
@@ -252,29 +212,12 @@ public class enemy : MonoBehaviour
     }
     // =====================================================================
 
-    public void Death()
-    {
-        Health -= 1;
-        if (Health == 0)
-        {
-            rb.bodyType = RigidbodyType2D.Static;
-            col.enabled = false;
-            animator.SetInteger("State", 3);
-            isLive = false;
-            spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-        }
-        else
-        {
-            attackdelay = 0;
-            attacking = false;
-        }
-    }
     void Attack()
     {
-
+        StartCoroutine(AttackCoroutine());
     }
 
- /*    IEnumerator AttackCoroutine()
+    IEnumerator AttackCoroutine()
     {
         on_action = true; // 행동 중 다른 모션 방지
         yield return new WaitForSeconds(1f); // 공격 딜레이
@@ -285,11 +228,11 @@ public class enemy : MonoBehaviour
         if ((dist.x > 0 && spriteRenderer.flipX) || (dist.x < 0 && !spriteRenderer.flipX)) //벡터의 방향과 적 개체가 바라보는 방향이 같은지 확인)
         {
             if (dist.x < attack_dist && dist.y < 0.5) //공격 범위 이내에 플레이어가 있는지 확인
-                playerHealth.TakeDamage(); //플레이어에 연결된 PlayerHealthController에서 TakeDamage를 불러와서 실행
+                playerHealth.TakeDamage(attack_dmg); //플레이어에 연결된 PlayerHealthController에서 TakeDamage를 불러와서 실행
             Debug.Log(playerHealth.currentHealth); //현재 플레이어 오브젝트 HP 확인 (디버깅용)
         }
         on_action = false;
-    } */
+    }
 
     // ===================== 원본 함수 유지(현재 Follow에서 호출 안 함) =====================
     void CheckGround()

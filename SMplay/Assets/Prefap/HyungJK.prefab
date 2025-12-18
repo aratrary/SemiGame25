@@ -210,6 +210,7 @@ MonoBehaviour:
     m_Bits: 8
   Stickface: 0
   Sticktrans: {fileID: 2945039212900660282}
+  currentHealth: 5
 --- !u!95 &2442617387341191700
 Animator:
   serializedVersion: 7
@@ -489,7 +490,8 @@ MonoBehaviour:
   JKscript: {fileID: 758610198189969202}
   JK: {fileID: 1832388016978696468}
   JKtrans: {fileID: 5800537205113539769}
-  returningspeed: 9
+  returningspeed: 10
+  Enemyscript: {fileID: 0}
 --- !u!61 &4699369109864181041
 BoxCollider2D:
   m_ObjectHideFlags: 0
