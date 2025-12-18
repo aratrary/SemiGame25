@@ -16,7 +16,7 @@ public class Moving : MonoBehaviour
     [Header("판단bool")]
     public bool isGround; // 땅에있음?
     public bool isJumping; // 점프함?
-    public bool havingWing; // 날개 가지고 있음?
+    public static bool havingWing; // 날개 가지고 있음?
     public bool Wingable; // 날개 펼칠 수 있음?
     public bool Stickable; // 스틱 밟고 점프할 수 있음?
     Rigidbody2D rigid; 
@@ -59,6 +59,18 @@ public class Moving : MonoBehaviour
     public LayerMask StickMask; // 스틱 Layer 분류
     public int Stickface; // stick이 바라보는 방향
     public Transform Sticktrans; // 사실 스틱 트랜스임ㄷㄷ
+    public GameObject RedBox;
+    public GameObject GreenBox;
+    public Transform Greentrans;
+    public bool catched = false;
+    float catchedtimer = 0;
+    bool groundcatched = false;
+
+    [Header("체력")]
+
+    public static int currentHealth = 5;
+
+    public float ?testing1 = null;
 
 
 
@@ -69,6 +81,7 @@ public class Moving : MonoBehaviour
         anim = GetComponent<Animator>();
 
         Jpower = Jumppower;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -113,7 +126,7 @@ public class Moving : MonoBehaviour
         if (StickKey)
         {
             StickKey = false;
-            if (StickingLevel <1)
+            if (StickingLevel <0.7)
             {
                 rigid.AddForce(Vector2.up * Stickingpower1, ForceMode2D.Impulse); // 1단계 스틱점프
             } 
@@ -123,12 +136,34 @@ public class Moving : MonoBehaviour
             }
             StickingLevel = 0; // 스틱 밟기정도 초기화
             Stickanim.SetInteger("State", 0); // 스틱 애니메이션 변경 
-            mainCollider.offset = new Vector2(0, -0.01f); // 콜라이더 초기화
-            mainCollider.size = new Vector2(0.12f, 0.32f);
+            mainCollider.offset = new Vector2(0, -0.016f); // 콜라이더 초기화
+            mainCollider.size = new Vector2(0.19f, 0.501f);
         }
     }
     void Update()
     {
+        /* if (transform.position.y > testing1 || testing1 == null)
+        {
+            testing1 = transform.position.y;
+            Debug.Log(testing1);
+        } */
+        if (catched)
+        {
+            catchedtimer += Time.deltaTime;
+            RedBox.SetActive(true);
+            GreenBox.SetActive(true);
+            Greentrans.localPosition = new Vector2(0.2370199f, -0.004630685f - 1/6f + catchedtimer / 3);
+            Greentrans.localScale = new Vector2(0.04623333f, catchedtimer * 2/3);
+            if (catchedtimer >= 0.5)
+            {
+                catched = false;
+                catchedtimer = 0;
+                RedBox.SetActive(false);
+                GreenBox.SetActive(false);
+
+            }
+        }
+
         CheckGrounded_BoxCast(); //isGround 체킹 + 밑이 스틱인지 체킹
 
         if (Input.GetButton("Vertical") && Stickable) // 아래로 누르고 있고 스틱점프가 가능하다면
@@ -136,7 +171,7 @@ public class Moving : MonoBehaviour
             if (!Ist)
                 Ist = true; // 일단 이거 실행중이라는 뜻
         
-            if (StickingLevel < 1)
+            if (StickingLevel < 0.7)
             {
                 if (StickingLevel == 0)
                 {
@@ -145,10 +180,10 @@ public class Moving : MonoBehaviour
                     Ij = false; // 점프키같은거 없어야디
                     ChangeAnim(State.Sit_1); // 애니메이션 앉는거로 변경
                     Stickanim.SetInteger("State", 1); // 스틱 애니메이션 변경
-                    mainCollider.offset = new Vector2(0, -0.04f); // 이거랑 아래거는 콜라이더 크기 변경하는거임
-                    mainCollider.size = new Vector2(0.12f, 0.26f);
-                    if (testing) // 테스트기능이라는 뜻임
-                    playerbody.position = new Vector3(Sticktrans.position.x, playerbody.position.y, 0); // 스틱 스프라이트와 형JK스프라이트 위치 맞추기
+                    mainCollider.offset = new Vector2(0, -0.06296875f); // 이거랑 아래거는 콜라이더 크기 변경하는거임
+                    mainCollider.size = new Vector2(0.19f, 0.4070625f);
+                    //if (testing) // 테스트기능이라는 뜻임
+                    //playerbody.position = new Vector3(Sticktrans.position.x, playerbody.position.y, 0); // 스틱 스프라이트와 형JK스프라이트 위치 맞추기
                 }
                 StickingLevel += Time.deltaTime; // 스틱정도 시간에 따라 조절
             }
@@ -210,6 +245,7 @@ public class Moving : MonoBehaviour
         if (!havingStick) // 스틱이 없어?
         {
             throwableStick = false; // 그럼 던질수도 없겠지
+            groundcatched = false;
         }
 
         if (isGround) // 땅이네
@@ -226,7 +262,7 @@ public class Moving : MonoBehaviour
 
             if (havingStick && !throwableStick) // 스틱을 가지고 있고 땅인데 스틱을 던질 수 없어?
             {
-                throwableStick = true; // 던질 수 있어야지
+                groundcatched = true;
             }
             if (!Wingable && havingWing) // 날개를 가지고 있고 땅는데 날개점프를 할 수 없어?
             {
@@ -236,6 +272,11 @@ public class Moving : MonoBehaviour
             {
                 rigid.gravityScale = 1; // 초기화해야지
             }
+        }
+
+        if (groundcatched && !catched)
+        {
+            throwableStick = true; // 던질 수 있어야지
         }
 
 
@@ -265,6 +306,17 @@ public class Moving : MonoBehaviour
             }
         }
 
+    }
+
+    public void TakeDamage()
+    {
+        currentHealth -= 1;
+        Debug.Log(currentHealth);
+    }
+
+    public void resetHealth()
+    {
+        currentHealth = 5;
     }
 
     public void AnimationUpdate()
