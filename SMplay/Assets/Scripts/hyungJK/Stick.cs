@@ -106,6 +106,7 @@ public class Stick : MonoBehaviour
         {
             isReturning = false; // 이제 돌아가는중 아님
             gameObject.SetActive(false); // 내가 없어..없어져볼게 하나 둘 셋 얏
+            JKscript.catched = true;
             JKscript.havingStick = true; // JK의 우람한 막대기 생김
             maincollider.isTrigger = false; // 나 이제 안 맞는 판정 없어
             maincollider.usedByEffector = true; // 형JK는 맞지 않도록 함

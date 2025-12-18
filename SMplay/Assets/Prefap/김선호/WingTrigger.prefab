@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4360236681604142810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3132594625913239369}
+  - component: {fileID: 2851114325553738033}
+  m_Layer: 0
+  m_Name: WingTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3132594625913239369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360236681604142810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 474.88992, y: 257.1372, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2851114325553738033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360236681604142810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uC5C4... \uC800 \uBC1C\uD310\uC740 \uB108\uBB34 \uB192\uC544\uC11C \uC62C\uB77C\uAC00\uC9C0
+        \uBABB\uD558\uACA0\uC5B4..."
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uD615JK"
+      sentences:
+      - "\uADF8\uB807\uAD70, \uC5B4? \uC800\uAC74 \uBB50\uC9C0?"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: ???
+      sentences:
+      - "Oh, \uC774\uACF3\uC774 hanhwa\uC758 high\u2642school\uC785\uB2C8\uAE4C?"
+      characterPortrait: {fileID: 0}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uC800 \uC800\uBD84\uC740?!"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uD3F0\uC138"
+      sentences:
+      - "\uC5ED\uC2DC Hanhwa\uC758 \uAE30\uC220\uB825\uC740 elon musk\uB3C4 \uBB34\uB98E\uC744
+        \uAFC7\uAC8C \uB9CC\uB4DC\uB294\uAD70\uC694 \uD559\uAD50 \uD504\uB85C\uC81D\uD2B8\uB85C
+        \uC774\uB7F0\uAC78 \uB9CC\uB4E4\uB2E4\uB2C8"
+      characterPortrait: {fileID: -4316147122097315915, guid: 5a632979ed4ef9f4bb7d17c567a13eb1, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "(\uC5B4\uB5BB\uAC8C \uC774\uAC78 \uD559\uAD50 \uD504\uB85C\uC81D\uD2B8\uB77C\uACE0
+        \uC0DD\uAC01\uD560 \uC218 \uC788\uC9C0?)"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uD3F0\uC138"
+      sentences:
+      - "\uBBF8\uB798\uC758 Scientist\uB4E4\uC5D0\uAC8C \uB4DC\uB9AC\uB294 \uC120\uBB3C\uC785\uB2C8\uB2E4."
+      characterPortrait: {fileID: -4316147122097315915, guid: 5a632979ed4ef9f4bb7d17c567a13eb1, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB098\uB808\uC774\uC158"
+      sentences:
+      - "\uADF8\uAC83\uC740 \uBC14\uB85C \uD55C\uD654\uC774\uAE00\uC2A4\uC758 \uB2ED\uB0A0\uAC1C\uC600\uB2E4"
+      characterPortrait: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uD615JK"
+      sentences:
+      - "\uD06C\uD751 \uC5ED\uC2DC GOAT"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: '   '
+      sentences:
+      - "2\uB2E8\uC810\uD504\uB97C \uD560 \uC218 \uC788\uAC8C \uB418\uC5C8\uB2E4!"
+      characterPortrait: {fileID: 0}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 101
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}

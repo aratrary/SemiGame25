@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2332873011585107487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3917127808527563444}
+  - component: {fileID: 5758870089170467465}
+  m_Layer: 0
+  m_Name: LibratyTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3917127808527563444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332873011585107487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.10754, y: -0.48636, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5758870089170467465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332873011585107487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043ef5220d424524692e781d083a0a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSequences:
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uD615JK"
+      sentences:
+      - "\uC5B4 \uC564\uB514\uB2E4"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uD6C4\uD6D7... \uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB2E4\uB2C8..."
+      - "\uB0B4\uAC00 \uC774 \uC544\uB2E8\uAD00\uC744 \uB85C\uBD07\uC73C\uB85C \uAC1C\uC870\uD588\uB2E4..."
+      - "\"\uBD81\uC77C\uACE0\uB97C \uBD80\uC218\uAE30 \uC704\uD574\""
+      - "\uB098\uB294 \uC5B8\uC81C\uB098 \uBD81\uC77C\uACE0\uAC00 \uC2EB\uC5C8\uB2E4
+        \uADF8\uB798\uC11C \uC544\uB2E8\uAD00 \uC99D\uCD95 \uACF5\uC0AC\uB97C \uD560
+        \uB54C \uB85C\uBD07\uC73C\uB85C \uB9CC\uB4E4 \uC218 \uC788\uAC8C \uACF5\uC0AC\uB97C
+        \uD574 \uB450\uC5C8\uC9C0"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uB3C4\uC9F1"
+      sentences:
+      - "\uC774 \uCC9C\uD558\uC758 \uB098\uC05C\uB188! \uAE30\uC0DD\uC624\uB77C\uBE44!"
+      characterPortrait: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uBB50\uC5B4?! \uC774 \uC545\uB140\uAC00!!"
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uD615JK"
+      sentences:
+      - "\uB108\uAC00 \uADF8\uB7AC\uB358\uAC70\uC57C? \uB10C \uC9C0\uAE08 \uB0B4\uAC00
+        \uC544\uB294 \uC564\uB514\uAC00 \uC544\uB2C8\uC57C."
+      - "\uC65C \uADF8\uB798? \uB0B4\uAC00 \uC544\uB294 \uC564\uB514\uB294 \uADF8\uB807\uC9C0
+        \uC54A\uC558\uB2E4\uACE0"
+      characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uB108\uAC00 \uC798 \uBABB \uC54C\uC558\uB358 \uAC70\uB2E4"
+      - "\uC9C0\uAE08 \uB09C \uB108\uB791 \uB300\uD654\uD560 \uC0DD\uAC01 \uC5C6\uB2E4."
+      - "<\uB3C4\uC11C\uAD00>, \uCC98\uB9AC\uD574."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "\uB108\uAC00 \uC798 \uBABB \uC54C\uC558\uB358 \uAC70\uB2E4"
+      - "\uC9C0\uAE08 \uB09C \uB108\uB791 \uB300\uD654\uD560 \uC0DD\uAC01 \uC5C6\uB2E4."
+      - "<\uB3C4\uC11C\uAD00>, \uCC98\uB9AC\uD574."
+      characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  delayBetweenDialogues: 0
+  interactionKey: 101
+  autoTrigger: 0
+  oneTimeOnly: 0
+  interactionUI: {fileID: 0}
