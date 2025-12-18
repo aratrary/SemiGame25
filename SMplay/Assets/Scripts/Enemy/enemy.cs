@@ -60,6 +60,9 @@ public class enemy : MonoBehaviour
     void Start()
     {
         isLive = true;
+        GameObject player = GameObject.FindGameObjectWithTag("JK");
+        playerHealth = player.GetComponent<Moving>();
+        target = player.GetComponent<Rigidbody2D>();
         on_action = false;
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
