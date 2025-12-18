@@ -741,7 +741,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &531081353
@@ -2923,9 +2923,227 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 111036247}
     - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].isCutsceneOnly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[3].isCutsceneOnly
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[0].cutsceneDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[0].dialogue.characterName
+      value: JK
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[1].dialogue.characterName
+      value: "\uB3C4\uC9F1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].dialogue.characterName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[3].dialogue.characterName
+      value: JK
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[4].dialogue.characterName
+      value: "\uB3C4\uC9F1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[5].dialogue.characterName
+      value: JK
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[6].dialogue.characterName
+      value: "\uB3C4\uC9F1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[7].dialogue.characterName
+      value: "\uB098\uB808\uC774\uC158"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[8].dialogue.characterName
+      value: JK
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[9].dialogue.characterName
+      value: "\uB3C4\uC9F1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[0].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[1].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[3].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[4].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[5].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[6].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[7].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 3463687063331491661, guid: 1780f9d3b1194c94692a64dacc33d575, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[8].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[9].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: 7878762990303367042, guid: 76d6b488a1330eb4499b481b8467efc4, type: 3}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[0].dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[1].dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].dialogue.sentences.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].setDialogueData.characterName
+      value: ' '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[3].dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[5].dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[6].dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[7].dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[9].dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[0].dialogue.sentences.Array.data[0]'
+      value: "\uC751. \uC54C\uC5B4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[0].dialogue.sentences.Array.data[1]'
+      value: "\uADFC\uB370 \uD669\uC720\uCC2C \uC694\uC0C8 \uBB50\uD558\uACE0\uB2E4\uB2C8\uB0D0?
+        n\uB144\uCA30 \uC548\uBCF4\uC774\uB294\uB370"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[1].dialogue.sentences.Array.data[0]'
+      value: "\u3139\u3147\uC774\uAC00;"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[1].dialogue.sentences.Array.data[1]'
+      value: "...\uC5B4? \uC800\uAC70 \uBCF4\uC5EC? JK?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[1].dialogue.sentences.Array.data[2]'
+      value: "\uD53C\uD574!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[3].dialogue.sentences.Array.data[0]'
+      value: "\uC73C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[3].dialogue.sentences.Array.data[1]'
+      value: "\uC5EC\uAE34...?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[4].dialogue.sentences.Array.data[0]'
+      value: "\uC815\uC2E0\uC774 \uB4E4\uC5B4 JK?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[4].dialogue.sentences.Array.data[1]'
+      value: "\uC5EC\uAE34 \uC544\uB2E8\uAD00\uC774\uC57C."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[5].dialogue.sentences.Array.data[0]'
+      value: "\uC544\uB2E8\uAD00...?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[6].dialogue.sentences.Array.data[0]'
+      value: "\uC751. \uC557!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[6].dialogue.sentences.Array.data[1]'
+      value: "\uC800\uAE30 \uBC14\uAE65\uC744\uBD10!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[7].dialogue.sentences.Array.data[0]'
+      value: "\uADF8\uB807\uB2E4. \uB85C\uBD07\uC73C\uB85C \uBCC0\uD55C \uC544\uB2E8\uAD00\uC774
+        \uBD81\uC77C\uACE0 \uD559\uC0DD\uB4E4\uC744 \uC190\uC73C\uB85C \uC7A1\uACE0
+        \uC788\uB358 \uAC83\uC774\uC5C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[8].dialogue.sentences.Array.data[0]'
+      value: "\uC73C\uC544\uB2DB. \uC564\uB514\uAC00 \uC6B0\uB9AC\uB4E4\uC758 \uD559\uBE44\uB85C
+        \uC544\uB2E8\uAD00\uC744 \uB85C\uBD07\uC73C\uB85C \uBC14\uAFB8\uB2E4\uB2C8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[9].dialogue.sentences.Array.data[0]'
+      value: "\uADF8\uB798\uC11C \uAE09\uC2DD\uC5D0 \uC790\uAFB8 \uD30C\uB9AC\uAC00
+        \uB098\uC628\uAC70\uAD70 \u3147\u3147;"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[9].dialogue.sentences.Array.data[1]'
+      value: "\uB108\uC758 \uADF8 '\uACE0\uC2A4\uD2F1'\uC73C\uB85C \uD559\uC0DD\uB4E4\uC744
+        \uAD6C\uD558\uC790!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[0].onCutscene.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].onCutscene.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[3].onCutscene.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
       propertyPath: dialogueSequences.Array.data[0].onCutscene.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1025471997}
+    - target: {fileID: 8726459355207335607, guid: 3efea2cb00d96034eb01f1910eb3759d, type: 3}
+      propertyPath: dialogueSequences.Array.data[2].onCutscene.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
