@@ -643,7 +643,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.4}
+    oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1781,7 +1781,7 @@ Transform:
   m_GameObject: {fileID: 1670238296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 1.85, z: 0}
+  m_LocalPosition: {x: 4.5, y: 2.5, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2113,7 +2113,7 @@ Transform:
   m_GameObject: {fileID: 1877242197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.4, y: 1.85, z: 0}
+  m_LocalPosition: {x: 5.4, y: 2.5, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2733,7 +2733,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.4}
+    oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 0.4, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3073,6 +3073,14 @@ PrefabInstance:
     - target: {fileID: 5024079985431199069, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
       propertyPath: m_Name
       value: HyungJK
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800537205113539769, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800537205113539769, guid: 58b441e5f1002f547ac540663a82354a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

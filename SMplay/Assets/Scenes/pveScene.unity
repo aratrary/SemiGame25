@@ -318,8 +318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  target: {fileID: 0}
+  target: {fileID: 1760307129}
   attack_dmg: 10
+  playerHealth: {fileID: 1760307131}
   groundCheck: {fileID: 0}
   groundCheckRadius: 1
   spritedir: 1

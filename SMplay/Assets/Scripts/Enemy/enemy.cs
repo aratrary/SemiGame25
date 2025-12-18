@@ -11,7 +11,7 @@ public class enemy : MonoBehaviour
     public Rigidbody2D target;
     private Collider2D col;
     public float attack_dmg; // 공격력, Inspector 창에서 설정
-    private PlayerHealthController playerHealth; // PlayerHealthController에서 플레이어 피 가져오는 용도
+    public PlayerHealthController playerHealth; // PlayerHealthController에서 플레이어 피 가져오는 용도
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f; // 땅바닥에 닿은걸로 치는 거리
@@ -28,10 +28,6 @@ public class enemy : MonoBehaviour
     private Collider2D targetCollider;
     void Start()
     {
-        
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        playerHealth = player.GetComponent<PlayerHealthController>();
-        target = player.GetComponent<Rigidbody2D>();
         on_action = false;
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -54,13 +50,13 @@ public class enemy : MonoBehaviour
         {
             Vector2 horizontal = new Vector2(dist.x, 0f);
             Follow(horizontal, new Vector2(0f,dist.y)); // Follow => 플레이어 쫓아가기
-            if (animator.GetInteger("AnimState") != 2) // 달리기 애니메이션
+            if (animator.GetInteger("State") != 1) // 달리기 애니메이션
             {
-                animator.SetInteger("AnimState",2);
+                animator.SetInteger("State",1);
             }
             if (horizontal.magnitude >20.0f) // 너무 멀리 떨어져있으면 가만히 있는 애니메이션으로 전환
             {
-                animator.SetInteger("AnimState",1);
+                animator.SetInteger("State",0);
             }
         }
     }
