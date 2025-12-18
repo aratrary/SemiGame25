@@ -11,6 +11,7 @@ using TMPro;
 /// sex
 
 
+[DefaultExecutionOrder(-200)]
 public class DialogueSystem : MonoBehaviour
 {
     #region UI 참조 변수들
@@ -43,8 +44,6 @@ public class DialogueSystem : MonoBehaviour
     /// 캐릭터 초상화를 표시하는 Image 컴포넌트 (선택사항)
     /// </summary>
     public Image characterPortrait;
-
-    public GameObject skillInventoryPanel;
     #endregion
     
     #region 대화 설정 변수들
@@ -92,7 +91,7 @@ public class DialogueSystem : MonoBehaviour
     /// 현재 출력 중인 문장 캐시 (타이핑 스킵용)
     /// </summary>
     private string currentSentence = string.Empty;
-    private enum UIState { None, Dialogue, SkillInventory }
+    private enum UIState { None, Dialogue }
     // ⭐ UI 상태 정의 ⭐
     private UIState currentUIState = UIState.None; 
     // ⭐ 현재 UI 상태 변수 ⭐
@@ -104,13 +103,32 @@ public class DialogueSystem : MonoBehaviour
     /// <summary>
     /// 게임 시작 시 한 번 호출되는 초기화 메서드
     /// </summary>
+    void Awake()
+    {
+        // 필드가 비어있으면 자동으로 찾아서 할당
+        AutoAssignFields();
+    }
+
     void Start()
     {
+        // Awake에서 필드를 잡았지만 혹시 모르니 한 번 더 확인
+        if (dialoguePanel == null || dialogueText == null || characterNameText == null)
+        {
+            AutoAssignFields();
+        }
+        
         // 문장 큐 초기화 (빈 큐 생성)
         sentences = new Queue<string>();
         
-        // 게임 시작 시 대화창을 숨김 상태로 설정
-        dialoguePanel.SetActive(false);
+        // 게임 시작 시 대화창을 숨김 상태로 설정 (null 안전 처리)
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("DialogueSystem: dialoguePanel이 연결되지 않았습니다. 자동 연결 이름(\"Dialogue\")을 확인하세요.");
+        }
         
         // 계속하기 표시기도 초기에는 숨김
         if (continueIndicator != null)
@@ -132,6 +150,211 @@ public class DialogueSystem : MonoBehaviour
     }
     }
     
+    /// <summary>
+    /// Inspector 필드가 비어있으면 자동으로 씬에서 찾아서 할당
+    /// </summary>
+    private void AutoAssignFields()
+    {
+        // dialoguePanel
+        if (dialoguePanel == null)
+        {
+            // 1) Canvas 하위에서 이름으로 직접 찾기
+            var canvas = FindObjectOfType<Canvas>();
+            if (canvas != null)
+            {
+                var dialogueTransform = canvas.transform.Find("Dialogue");
+                if (dialogueTransform != null)
+                    dialoguePanel = dialogueTransform.gameObject;
+            }
+
+            // 2) 씬 전체에서 이름으로 찾기 (활성 오브젝트)
+            if (dialoguePanel == null)
+            {
+                dialoguePanel = GameObject.Find("Dialogue");
+            }
+
+            // 3) 흔한 변형 이름으로 검색 (대소문자 무시, 활성 오브젝트만)
+            if (dialoguePanel == null)
+            {
+                foreach (var go in FindObjectsOfType<GameObject>())
+                {
+                    var name = go.name.ToLowerInvariant();
+                    if (name.Contains("dialog") && go.GetComponent<RectTransform>() != null)
+                    {
+                        dialoguePanel = go;
+                        break;
+                    }
+                }
+            }
+
+            // 4) dialogueText의 부모를 패널로 사용 (마지막 안전장치)
+            if (dialoguePanel == null && dialogueText != null)
+            {
+                var parent = dialogueText.transform.parent;
+                if (parent != null)
+                {
+                    dialoguePanel = parent.gameObject;
+                }
+            }
+
+            if (dialoguePanel == null)
+                Debug.LogWarning("DialoguePanel을 찾을 수 없습니다! 이름을 'Dialogue'로 하거나 DialogueText의 부모를 패널로 사용하세요.");
+        }
+        
+        // characterNameText (먼저 찾음: 이름 텍스트를 우선 확정해야 대사 텍스트와 혼동 방지)
+        if (characterNameText == null)
+        {
+            TextMeshProUGUI TryFindNameIn(Transform root)
+            {
+                if (root == null) return null;
+                var tmps = root.GetComponentsInChildren<TextMeshProUGUI>(true);
+                foreach (var t in tmps)
+                {
+                    var n = t.gameObject.name.ToLowerInvariant();
+                    if (n.Contains("charactername") || n.Equals("name") || n.Contains("speaker"))
+                        return t;
+                }
+                return null;
+            }
+
+            // 1) 패널 내부 우선 탐색
+            characterNameText = TryFindNameIn(dialoguePanel != null ? dialoguePanel.transform : null);
+
+            // 2) 정확한 이름 탐색
+            if (characterNameText == null)
+            {
+                var nameObj = GameObject.Find("CharacterName");
+                if (nameObj != null) characterNameText = nameObj.GetComponent<TextMeshProUGUI>();
+            }
+
+            // 3) 전체 탐색 (대소문자 무시 키워드)
+            if (characterNameText == null)
+            {
+                foreach (var t in FindObjectsOfType<TextMeshProUGUI>(true))
+                {
+                    var n = t.gameObject.name.ToLowerInvariant();
+                    if (n.Contains("charactername") || n.Equals("name") || n.Contains("speaker"))
+                    {
+                        characterNameText = t;
+                        break;
+                    }
+                }
+            }
+
+            if (characterNameText == null)
+                Debug.LogWarning("CharacterNameText를 찾을 수 없습니다! 이름 오브젝트를 'CharacterName' 또는 'Name'으로 지정하면 자동 연결됩니다.");
+        }
+
+        // dialogueText (대사 텍스트는 이름 텍스트와 다른 컴포넌트여야 함)
+        if (dialogueText == null)
+        {
+            TextMeshProUGUI TryFindDialogueIn(Transform root)
+            {
+                if (root == null) return null;
+                var tmps = root.GetComponentsInChildren<TextMeshProUGUI>(true);
+                foreach (var t in tmps)
+                {
+                    if (characterNameText != null && t == characterNameText) continue;
+                    var n = t.gameObject.name.ToLowerInvariant();
+                    // 이름 후보를 제외하고, 대사에 자주 쓰는 키워드 선호
+                    if (!n.Contains("name") && !n.Contains("speaker") &&
+                        (n.Contains("dialog") || n.Contains("text") || n.Contains("content") || n.Contains("body") || n.Contains("line") || n.Contains("message")))
+                        return t;
+                }
+                // 키워드가 없으면 이름 텍스트와 다른 첫 번째 TMP를 반환
+                foreach (var t in tmps)
+                {
+                    if (characterNameText != null && t == characterNameText) continue;
+                    var n = t.gameObject.name.ToLowerInvariant();
+                    if (!n.Contains("name") && !n.Contains("speaker"))
+                        return t;
+                }
+                return null;
+            }
+
+            // 1) 정확한 이름 우선
+            var textObj = GameObject.Find("DialogueText");
+            if (textObj != null) dialogueText = textObj.GetComponent<TextMeshProUGUI>();
+
+            // 2) 패널 내부 탐색
+            if (dialogueText == null)
+                dialogueText = TryFindDialogueIn(dialoguePanel != null ? dialoguePanel.transform : null);
+
+            // 3) 전체 탐색 (이름 텍스트와 다른 컴포넌트 선택)
+            if (dialogueText == null)
+            {
+                foreach (var t in FindObjectsOfType<TextMeshProUGUI>(true))
+                {
+                    if (characterNameText != null && t == characterNameText) continue;
+                    var n = t.gameObject.name.ToLowerInvariant();
+                    if (!n.Contains("name") && !n.Contains("speaker"))
+                    {
+                        dialogueText = t;
+                        break;
+                    }
+                }
+            }
+
+            if (dialogueText == null)
+                Debug.LogWarning("DialogueText를 찾을 수 없습니다! 대사 텍스트 오브젝트를 'DialogueText'로 이름 지정하면 자동 연결됩니다.");
+        }
+
+        // 최종 안전장치: 두 참조가 같은 컴포넌트를 가리키면 재시도
+        if (dialogueText != null && characterNameText != null && dialogueText == characterNameText)
+        {
+            Debug.LogWarning("DialogueSystem: characterNameText와 dialogueText가 동일한 컴포넌트를 참조합니다. 재검색을 시도합니다.");
+            // 이름 텍스트를 유지하고, 대사 텍스트만 다시 엄격 기준으로 탐색
+            TextMeshProUGUI strict = null;
+            if (dialoguePanel != null)
+            {
+                foreach (var t in dialoguePanel.GetComponentsInChildren<TextMeshProUGUI>(true))
+                {
+                    if (t == characterNameText) continue;
+                    var n = t.gameObject.name.ToLowerInvariant();
+                    if (n.Contains("dialog") || n.Equals("dialoguetext") || n.Contains("content") || n.Contains("body") || n.Contains("line") || n.Contains("message"))
+                    {
+                        strict = t; break;
+                    }
+                }
+            }
+            if (strict != null) dialogueText = strict;
+        }
+        
+        // continueIndicator (버튼)
+        if (continueIndicator == null)
+        {
+            continueIndicator = GameObject.Find("ContinueButton");
+            if (continueIndicator == null)
+                continueIndicator = GameObject.Find("ContinueIndicator");
+            
+            if (continueIndicator == null)
+                Debug.LogWarning("ContinueIndicator를 찾을 수 없습니다!");
+        }
+        
+        // characterPortrait
+        if (characterPortrait == null)
+        {
+            var portraitObj = GameObject.Find("CharacterPortrait");
+            if (portraitObj != null)
+                characterPortrait = portraitObj.GetComponent<Image>();
+            else
+            {
+                var allImages = FindObjectsOfType<Image>();
+                foreach (var img in allImages)
+                {
+                    if (img.gameObject.name.Contains("Portrait"))
+                    {
+                        characterPortrait = img;
+                        break;
+                    }
+                }
+            }
+            
+            if (characterPortrait == null)
+                Debug.LogWarning("CharacterPortrait를 찾을 수 없습니다!");
+        }
+    }
+
     /// <summary>
     /// 매 프레임마다 호출되는 업데이트 메서드
     /// 사용자 입력을 감지하고 대화 진행을 제어
@@ -167,6 +390,15 @@ public class DialogueSystem : MonoBehaviour
     /// <param name="keepPanelOpen">패널이 이미 열려있으면 유지 (연속 대화용)</param>
     public void StartDialogue(DialogueData dialogue, bool keepPanelOpen = false)
     {
+        if (dialoguePanel == null)
+        {
+            AutoAssignFields();
+            if (dialoguePanel == null)
+            {
+                Debug.LogError("DialogueSystem: dialoguePanel이 여전히 null입니다. 씬에 대화 패널이 있는지 확인하세요.");
+                return;
+            }
+        }
         Debug.Log($"StartDialogue 호출됨 - keepPanelOpen: {keepPanelOpen}, dialogueActive: {dialogueActive}");
         
         // 이미 대화가 진행 중이고 keepPanelOpen이 아니면 새 대화 시작 방지
@@ -186,11 +418,10 @@ public class DialogueSystem : MonoBehaviour
 
         // 대화 시스템 활성화
         dialogueActive = true;
-        if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 혹시 몰라 항상 끕니다.
         currentUIState = UIState.Dialogue; // 대화 시작하면 무조건 대화창 상태
         
         // 대화창 패널 활성화 (화면에 표시) - keepPanelOpen이면 이미 열려있으므로 스킵
-        if (!keepPanelOpen)
+        if (!keepPanelOpen && dialoguePanel != null)
         {
             Debug.Log("대화 패널을 활성화합니다.");
             dialoguePanel.SetActive(true);
@@ -199,7 +430,7 @@ public class DialogueSystem : MonoBehaviour
         {
             Debug.Log("대화 패널 유지 (keepPanelOpen=true)");
             // keepPanelOpen이어도 실제로 꺼져있으면 켜야 함
-            if (!dialoguePanel.activeSelf)
+            if (dialoguePanel != null && !dialoguePanel.activeSelf)
             {
                 Debug.Log("패널이 꺼져있어서 다시 활성화합니다.");
                 dialoguePanel.SetActive(true);
@@ -248,12 +479,11 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
 
         // UI 요소들 비활성화 - keepPanelOpen이면 패널은 유지
-        if (!keepPanelOpen)
+        if (!keepPanelOpen && dialoguePanel != null)
         {
             Debug.Log("dialoguePanel을 비활성화합니다.");
             dialoguePanel.SetActive(false);
         }
-        if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 확실히 끔
         currentUIState = UIState.None; // 대화 종료하면 UI 상태는 None
         if (continueIndicator != null)
         {
@@ -486,59 +716,12 @@ public class DialogueSystem : MonoBehaviour
     #endregion
     
         /// <summary>
-    /// 'T' 키 입력에 따라 UI 패널들의 가시성 상태를 전환합니다.
-    /// 순환: None -> Dialogue -> SkillInventory -> None -> ... (또는 Dialogue -> SkillInventory -> Dialogue 로 순환)
+    /// <summary>
+    /// T 키 입력 처리 (필요시 구현)
     /// </summary>
     private void ToggleUIPanel()
     {
-        Debug.Log("ToggleUIPanel 호출됨, 현재 UIState (진입시): " + currentUIState + ", dialogueActive: " + dialogueActive);
-
-        // 모든 UI 패널 일단 끄기 (여기서는 건드리지 않음)
-        //dialoguePanel.SetActive(false); // 이건 대화창이 꺼진 상태여도 유지해야 하므로, 밑에서 개별적으로 제어
-        //if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 이것도 마찬가지
-
-        // 현재 대화가 진행 중일 때만 UI 전환 로직을 수행
-        if (!dialogueActive)
-        {
-            // 대화가 진행 중이 아닐 때는 T를 눌러도 Skill/Inventory UI만 토글되게 하거나 아무것도 하지 않도록 할 수 있습니다.
-            // 여기서는 대화가 진행 중일 때만 'T' 키가 Dialogue와 SkillInventory를 전환하도록 만듭니다.
-            // 만약 대화와 무관하게 SkillInventory를 토글하고 싶다면 이 if문을 제거하고 로직을 수정해야 합니다.
-            // 우선은 대화 중에만 UI 전환이 되도록 가정합니다.
-
-            Debug.Log("대화가 진행 중이 아니라 UI 전환 로직을 건너뜁니다.");
-            return; // 대화가 진행 중이 아닐 때는 'T' 키가 UI 전환을 하지 않도록
-        }
-
-        // 현재 UI 상태에 따라 다음 상태 결정
-        switch (currentUIState)
-        {
-            case UIState.Dialogue: // 현재 대화창이 켜져 있었으면 스킬/인벤토리로
-                dialoguePanel.SetActive(false); // 대화창 끄기
-                if (skillInventoryPanel != null)
-                {
-                    skillInventoryPanel.SetActive(true); // 스킬/인벤토리 켜기
-                    currentUIState = UIState.SkillInventory;
-                }
-                else // 스킬/인벤토리 패널이 없으면 다시 Dialogue로 (순환)
-                {
-                    dialoguePanel.SetActive(true); // 대화창 켜기
-                    currentUIState = UIState.Dialogue;
-                }
-                break;
-
-            case UIState.SkillInventory: // 현재 스킬/인벤토리가 켜져 있었으면 대화창으로
-                if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 스킬/인벤토리 끄기
-                dialoguePanel.SetActive(true); // 대화창 켜기
-                currentUIState = UIState.Dialogue;
-                break;
-
-            default: // None 상태이거나 예측 불가능한 상태라면 기본적으로 대화창으로
-                dialoguePanel.SetActive(true);
-                if (skillInventoryPanel != null) skillInventoryPanel.SetActive(false); // 다른 UI는 끄고
-                currentUIState = UIState.Dialogue;
-                break;
-        }
-
-        Debug.Log("ToggleUIPanel 호출됨, 변경 후 UIState: " + currentUIState);
+        Debug.Log("ToggleUIPanel 호출됨");
+        // 필요한 UI 전환 로직 추가
     }
 }
