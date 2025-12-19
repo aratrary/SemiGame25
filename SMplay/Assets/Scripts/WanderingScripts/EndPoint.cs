@@ -1,5 +1,6 @@
 using System;
 using Unity.Collections;
+using UnityEditor.Analytics;
 using UnityEngine;
 
 public class EndPoint : MonoBehaviour
@@ -16,6 +17,11 @@ public class EndPoint : MonoBehaviour
     }
 */
     void OnTriggerEnter2D(Collider2D collision)
+    {
+        haaaaaamsu(collision);
+    }
+    
+    public void haaaaaamsu(Collider2D collision)
     {
         if (!collision.CompareTag("JK")) return;
         Debug.Log("Trying to loading "+sceneName+"...");
