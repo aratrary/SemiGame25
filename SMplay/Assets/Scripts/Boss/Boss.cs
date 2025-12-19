@@ -31,9 +31,10 @@ public class FloatingLibrary : MonoBehaviour
     {
         boss_health = 500f;
     }
-    void TkDMG(float dmg)
+    public void TkDMG(float dmg)
     {
         boss_health = boss_health - dmg;
+        Debug.Log($"보스 체력: {boss_health}");
         if (boss_health <= 0)
             Destroy(this.gameObject);
     }

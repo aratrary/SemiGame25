@@ -49,6 +49,7 @@ public class Transition : MonoBehaviour
         transform.position = cam.transform.position;
 
         */
+        Debug.Log("아무거나");
         var load = SceneManager.LoadSceneAsync(sceneName);
         while (!load.isDone) yield return null;
 

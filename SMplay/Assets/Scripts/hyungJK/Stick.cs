@@ -13,9 +13,12 @@ public class Stick : MonoBehaviour
     public LayerMask enemyMask; // 적
     public LayerMask groundMask; // 땅
     public LayerMask JKMask; // 형JK
+    public LayerMask bossMask; // 보스
     public bool hitEnemy; // 맞춘거 적임?
     public bool hitGround; // 맞춘거 땅임?
+    public bool hitBoss; // 맞춘거 보스임?
     public GameObject hittedEnemy; // 맞춘 적
+    public GameObject hittedBoss; // 맞춘 보스
     public int layer=0; // 맞춘 레이어
     public bool isReturning; // 돌아가는중임?
     public Moving JKscript; // 형JK의 스크립트
@@ -23,6 +26,7 @@ public class Stick : MonoBehaviour
     public Transform JKtrans; // 사실 JK 트랜스임ㄷㄷ
     public float returningspeed; // 돌아가는속도
     public enemy Enemyscript;
+    public FloatingLibrary Bossscript;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -46,6 +50,11 @@ public class Stick : MonoBehaviour
             
         }
 
+        else if (hitBoss) // 맞춘게 보스임?
+        {
+            
+        }
+
         if (isReturning) // 돌아가는중임?
         {
             Vector2 toJK = (Vector2)JKtrans.position - rigid.position; // JK 위치에서 내 위치 빼서 벡터를 구해
@@ -60,8 +69,11 @@ public class Stick : MonoBehaviour
         face = facing; // 보는 방향 변수에 저장
         hitEnemy = false; // 적 맞췄는지 초기화
         hitGround = false; // 땅 맞췄는지 초기화
+        hitBoss = false; // 보스 맞췄는지 초기화
         hittedEnemy = null; // 맞춘 적 ㅊㄱㅎ
+        hittedBoss = null; // 맞춘 보스 초기화
         Enemyscript = null;
+        Bossscript = null;
         isFlying = true; // 날고있어
         childcollider.isTrigger = false; // 플랫폼처럼 밟히는거 활성화
     }
@@ -79,7 +91,7 @@ public class Stick : MonoBehaviour
     void OnCollisionStay2D(Collision2D collision)
     {
         layer = 1 << collision.gameObject.layer; // 맞은애 value
-        if (isFlying && (layer == enemyMask.value || layer == groundMask.value)) //맞은 애가 적이거나 땅이야?
+        if (isFlying && (layer == enemyMask.value || layer == groundMask.value || layer == bossMask.value)) //맞은 애가 적이거나 땅이거나 보스야?
         {
             isFlying = false; //일단 나는건 멈춰
             maincollider.isTrigger = true; // 맞는 판정은 이제 필요없어
@@ -90,6 +102,17 @@ public class Stick : MonoBehaviour
                 hittedEnemy = collision.gameObject;
                 Enemyscript = hittedEnemy.GetComponent<enemy>();
                 Enemyscript.Death();
+                rigid.gravityScale = 1;
+            }
+            else if (layer == bossMask.value) // 보스가 맞은거야?
+            {
+                hitBoss = true; // 보스가 맞았다고 상태를 정하자
+                hittedBoss = collision.gameObject;
+                Bossscript = hittedBoss.GetComponent<FloatingLibrary>();
+                if (Bossscript != null)
+                {
+                    Bossscript.TkDMG(50f); // 보스에게 50 데미지
+                }
                 rigid.gravityScale = 1;
             }
             else if (layer == groundMask.value) // 땅이 맞은거야?

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Collections;
-public class NewMonoBehaviourScript : MonoBehaviour
+public class nvm : MonoBehaviour
 {
     float dmg; //광선 데미지
 
