@@ -86,7 +86,7 @@ MonoBehaviour:
     dialogue:
       characterName: "\uD615JK"
       sentences:
-      - "\uB204\uAD6C\uC9C0?"
+      - "\uB204\uAC00 \uC774\uB7F0 \uC77C\uC744 \uBC8C@\uB9B0\uAC70\uC9C0?"
       characterPortrait: {fileID: 7539701240568900065, guid: c678ea2081bb54a46bb1a092d9f3a69d, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -317,8 +317,23 @@ MonoBehaviour:
       characterName: "\uC564\uB514"
       sentences:
       - "\uC5B4? \uC65C \uC548\uB418\uC9C0? "
-      - "...\uC544 \uB9DE\uB2E4 emp!! (\uC564\uB514\uB1CC ON)"
       characterPortrait: {fileID: -1490216429548622587, guid: 86ce217a065e312419e03cb8926744dc, type: 3}
+    disableTriggerBefore: {fileID: 0}
+    enableTriggerAfter: {fileID: 0}
+    setDialogueData:
+      characterName: 
+      sentences: []
+      characterPortrait: {fileID: 0}
+  - isCutsceneOnly: 0
+    cutsceneDuration: 0
+    onCutscene:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogue:
+      characterName: "\uC564\uB514"
+      sentences:
+      - "...\uC544 \uB9DE\uB2E4 emp!! (\uC564\uB514\uB1CC ON)"
+      characterPortrait: {fileID: 1549169562487608561, guid: cb1f6a4ac404b0241b29ee0e13ba02c9, type: 3}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
     setDialogueData:
@@ -535,10 +550,10 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     dialogue:
-      characterName: '  '
+      characterName: '       '
       sentences:
-      - "\uC9C0\uD558 1\uCE35\uC73C\uB85C \uAC00\uC11C \uACE0\uC804\uC555\uC2E4\uC744
-        \uBD80\uC234\uB77C!"
+      - "\uC9C0\uD558 1\uCE35\uC73C\uB85C \uC564\uB514\uBCF4\uB2E4 \uBE68\uB9AC \uB0B4\uB824\uAC00\uC790!(\uC0AC\uC2E4
+        \uC564\uB514\uAC00 \uB0B4\uB824\uAC00\uB294\uAC74 \uAD6C\uD604 \uC548\uD588\uB2E4)"
       characterPortrait: {fileID: 0}
     disableTriggerBefore: {fileID: 0}
     enableTriggerAfter: {fileID: 0}
@@ -547,6 +562,7 @@ MonoBehaviour:
       sentences: []
       characterPortrait: {fileID: 0}
   delayBetweenDialogues: 0
+  autoStartOnLoad: 1
   interactionKey: 101
   autoTrigger: 0
   oneTimeOnly: 0

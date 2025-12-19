@@ -73,7 +73,10 @@ public class Moving : MonoBehaviour
     public float ?testing1 = null;
 
 
-
+    public void givewing()
+    {
+        havingWing = true;
+    }
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();

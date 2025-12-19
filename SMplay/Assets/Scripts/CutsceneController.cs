@@ -7,6 +7,8 @@ using System.Collections;
 /// </summary>
 public class CutsceneController : MonoBehaviour
 {
+    
+
     /// <summary>
     /// tempPlayer를 오른쪽으로 움직이는 컷씬 (기본값: 2칸, 2초)
     /// OnCutscene 이벤트에 직접 연결 가능

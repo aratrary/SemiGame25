@@ -207,6 +207,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8207541353578115303}
     m_Modifications:
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[6].dialogue.characterName
+      value: "\uC120\uC0DD\uB2D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[8].dialogue.characterName
+      value: "\uC120\uC0DD\uB2D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[10].dialogue.characterName
+      value: "\uC120\uC0DD\uB2D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[12].dialogue.characterName
+      value: "\uC120\uC0DD"
+      objectReference: {fileID: 0}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[14].dialogue.characterName
+      value: "\uC120\uC0DD"
+      objectReference: {fileID: 0}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[6].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: -1254566667696149288, guid: a96eefb2658d0884287e2ccf46f67a59, type: 3}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[8].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: -1254566667696149288, guid: a96eefb2658d0884287e2ccf46f67a59, type: 3}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[10].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: -1254566667696149288, guid: a96eefb2658d0884287e2ccf46f67a59, type: 3}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[12].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: -1254566667696149288, guid: a96eefb2658d0884287e2ccf46f67a59, type: 3}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: dialogueSequences.Array.data[14].dialogue.characterPortrait
+      value: 
+      objectReference: {fileID: -1254566667696149288, guid: a96eefb2658d0884287e2ccf46f67a59, type: 3}
+    - target: {fileID: 619392515824862022, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
+      propertyPath: 'dialogueSequences.Array.data[17].dialogue.sentences.Array.data[0]'
+      value: "\uC120\uC0DD\uC740 \uAE30\uC808\uD558\uACE0 \uB9D0\uC558\uB2E4."
+      objectReference: {fileID: 0}
     - target: {fileID: 744131268072323139, guid: fa3092589acafd2449257b7f9a760b95, type: 3}
       propertyPath: m_Name
       value: WonGwangTrigger 1
