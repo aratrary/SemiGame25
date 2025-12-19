@@ -26,9 +26,10 @@ public class FloatingLibrary : MonoBehaviour
     private int currentWaypoint = 0;
     public bool on_pattern = false; //패턴 실행중인지 체크용
     public int now_pattern = 1; //어떤 패턴을 실행중인지
-
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -51,12 +52,15 @@ public class FloatingLibrary : MonoBehaviour
             
         if (!on_pattern) // 이미 패턴이 실행중이면 패턴 실행 x
         {
+            animator.SetInteger("AnimState",2);
             int randomInt = Random.Range(0, 3);
             if (randomInt == 0)
                 StartPattern(2); //공격패턴 확률 33%
             else
                 StartPattern(1); // 이동패턴 확률 66%
         }
+        else
+            animator.SetInteger("AnimState",1);
     }
     void StartPattern(int pattern_num)
     {
