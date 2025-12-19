@@ -1,17 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:SMplay/Assets/Scripts/Boss.meta
 guid: 10d5711548f1a254ba54f8a53116850e
 ========
 guid: a25a46b0992a8b14797b53d6cb3839f9
 >>>>>>>> Stashed changes:SMplay/Assets/Casual Fantasy Book Icon Pack – 10 Stylized Magic Books/Resources.meta
-=======
-<<<<<<<< Updated upstream:SMplay/Assets/Resources.meta
-guid: 51765a502f0f70545ada21b5f1bbf5a8
-========
-guid: 86f6bc819a627024fbb2321db67ac617
->>>>>>>> Stashed changes:SMplay/Assets/Scripts/Boss.meta
->>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

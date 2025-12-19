@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:SMplay/Assets/Resources.meta
 guid: 51765a502f0f70545ada21b5f1bbf5a8
+========
+guid: 86f6bc819a627024fbb2321db67ac617
+>>>>>>>> Stashed changes:SMplay/Assets/Scripts/Boss.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

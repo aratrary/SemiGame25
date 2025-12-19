@@ -26,7 +26,12 @@ public class FloatingLibrary : MonoBehaviour
     private int currentWaypoint = 0;
     public bool on_pattern = false; //패턴 실행중인지 체크용
     public int now_pattern = 1; //어떤 패턴을 실행중인지
+<<<<<<< Updated upstream
     private Animator animator;
+=======
+    public Animator animator;
+
+>>>>>>> Stashed changes
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -52,6 +57,7 @@ public class FloatingLibrary : MonoBehaviour
             
         if (!on_pattern) // 이미 패턴이 실행중이면 패턴 실행 x
         {
+<<<<<<< Updated upstream
             animator.SetInteger("AnimState",2);
             int randomInt = Random.Range(0, 3);
             if (randomInt == 0)
@@ -65,6 +71,19 @@ public class FloatingLibrary : MonoBehaviour
     void StartPattern(int pattern_num)
     {
         on_pattern=true;
+=======
+            int randomInt = Random.Range(0, 3);
+            if (randomInt == 0)
+                StartPattern(1); //공격패턴 확률 33%
+            else
+                StartPattern(2); // 이동패턴 확률 66%
+        }
+    }
+    void StartPattern(int pattern_num)
+    {
+        on_pattern = true;
+        animator.SetInteger("AnimState", 2);
+>>>>>>> Stashed changes
         if (pattern_num == 1) //이동 패턴
             StartCoroutine(Pattern_1());
         else if (pattern_num ==2) //공격 패턴
@@ -78,6 +97,10 @@ public class FloatingLibrary : MonoBehaviour
         yield return StartCoroutine(Wait(3f));
         yield return StartCoroutine(Move(this.gameObject,2));
         yield return StartCoroutine(Wait(3f));
+<<<<<<< Updated upstream
+=======
+        animator.SetInteger("AnimState", 1);
+>>>>>>> Stashed changes
         on_pattern=false;
     }
     IEnumerator Pattern_2() //공격패턴
@@ -89,7 +112,11 @@ public class FloatingLibrary : MonoBehaviour
             StartCoroutine(Move(minionList[i],i+4)); //책 4권 각각 지정위치로 이동
             minionList[i].transform.rotation = Quaternion.Euler(0, 0, angleList[i]); //책 4권 모두 플레이어를 바라보게 회전
         }
+<<<<<<< Updated upstream
         yield return StartCoroutine(Wait(4.0f)); //책이 소환 후 공격할떄까지의 대기시간
+=======
+        yield return StartCoroutine(Wait(2.0f)); //책이 소환 후 공격할떄까지의 대기시간
+>>>>>>> Stashed changes
         int k = 0;
         for (int i = 0; i<4;i++)
         {
@@ -98,6 +125,24 @@ public class FloatingLibrary : MonoBehaviour
             k++;
         }
         yield return StartCoroutine(Wait(2f));
+<<<<<<< Updated upstream
+=======
+        foreach (GameObject book in minionList)
+        {
+            Destroy(book);
+        }
+        foreach (var item in minionrayList)
+        {
+            if (item.ray != null)
+            {
+                Destroy(item.ray);
+            }
+        }
+        // 파괴 후 리스트 비우기
+        minionList.Clear();
+        minionrayList.Clear();
+        animator.SetInteger("AnimState", 1);
+>>>>>>> Stashed changes
         on_pattern=false;
     }
     IEnumerator Move(GameObject obj, int pos_num) //이동 (오브젝트 넣고, 위쪽 포지션 리스트에 값만 잘 넣어두면 편하게 쓸수 있게 만들었습니다)
