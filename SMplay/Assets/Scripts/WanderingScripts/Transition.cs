@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Runtime.ExceptionServices;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,21 +11,24 @@ public class Transition : MonoBehaviour
 {
     public string sceneName = "MainScene"; //디폴트값(얘는의미없고EndPoint가의미잇음)
     public float duration = 1f;
+    public GameObject player;
+    public Transform playerTF;
 
     private bool isTransitioning;
-/*
+
     void Awake()
     {
-        DontDestroyOnLoad(transform.root.gameObject); //씬 옮겨도 안부서지게
-    }
-*/
-    public void Falling(string sceneName, float duration)
-    {
-        if (isTransitioning) return;
-        StartCoroutine(Eclipse(sceneName, duration));
+        //DontDestroyOnLoad(transform.root.gameObject); //씬 옮겨도 안부서지게
+        DontDestroyOnLoad(gameObject);
     }
 
-    IEnumerator Eclipse(string sceneName, float duration)
+    public void Falling(string sceneName, /*float duration*/float x, float y)
+    {
+        if (isTransitioning) return;
+        StartCoroutine(Eclipse(sceneName, x, y));
+    }
+
+    IEnumerator Eclipse(string sceneName, float x, float y)
     {
         /*
         Camera cam = Camera.main;
@@ -46,6 +51,11 @@ public class Transition : MonoBehaviour
         */
         var load = SceneManager.LoadSceneAsync(sceneName);
         while (!load.isDone) yield return null;
+
+        player = GameObject.FindGameObjectWithTag("JK");
+        playerTF = player.GetComponent<Transform>();
+        
+        playerTF.transform.position = new Vector3(x, y, 0);
         Destroy(gameObject);
         /*
         yield return null; //한프레임대기
@@ -65,5 +75,10 @@ public class Transition : MonoBehaviour
 
         isTransitioning = false;
         */
+    }
+
+    internal void Falling(string sceneName, Collider2D collision, float x, float y)
+    {
+        throw new NotImplementedException();
     }
 }
