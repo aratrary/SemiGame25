@@ -67,8 +67,9 @@ public class Moving : MonoBehaviour
     bool groundcatched = false;
 
     [Header("체력")]
-
+    public int maxHealth = 5;
     public static int currentHealth = 5;
+    public HealthBarDisplay healthBarUI;
 
     public float ?testing1 = null;
 
@@ -85,6 +86,16 @@ public class Moving : MonoBehaviour
 
         Jpower = Jumppower;
         DontDestroyOnLoad(gameObject);
+
+        // HealthBar 자동 연결 시도 (비어있을 때만)
+        if (healthBarUI == null)
+        {
+            healthBarUI = FindObjectOfType<HealthBarDisplay>();
+        }
+
+        // 시작 시 체력 초기화 및 UI 반영
+        currentHealth = maxHealth;
+        UpdateHealthUI();
     }
 
     // Update is called once per frame
@@ -314,12 +325,23 @@ public class Moving : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth -= 1;
+        if (currentHealth < 0) currentHealth = 0;
+        UpdateHealthUI();
         Debug.Log(currentHealth);
     }
 
     public void resetHealth()
     {
-        currentHealth = 5;
+        currentHealth = maxHealth;
+        UpdateHealthUI();
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (healthBarUI != null && maxHealth > 0)
+        {
+            healthBarUI.UpdateHealthBar((float)currentHealth / maxHealth);
+        }
     }
 
     public void AnimationUpdate()
