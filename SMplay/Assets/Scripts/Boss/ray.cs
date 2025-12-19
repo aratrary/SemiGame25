@@ -5,6 +5,10 @@ using System.Collections;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
+}
+
+public class nvm : MonoBehaviour
+{
     // 광선 데미지 (PlayerHealthController가 있다면 float로, Moving 스크립트가 있다면 호출수 1)
     public float dmg = 1f;
 
