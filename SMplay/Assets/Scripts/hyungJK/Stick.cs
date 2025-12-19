@@ -78,21 +78,43 @@ public class Stick : MonoBehaviour
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-        layer = 1 << collision.gameObject.layer; // 맞은애 value
-        if (isFlying && (layer == enemyMask.value || layer == groundMask.value)) //맞은 애가 적이거나 땅이야?
+        layer = 1 << collision.gameObject.layer; // 맞은애 value (비트)
+        // Use mask-friendly checks: support masks that contain multiple layers
+        bool hitEnemyLayer = (layer & enemyMask.value) != 0;
+        bool hitGroundLayer = (layer & groundMask.value) != 0;
+        if (isFlying && (hitEnemyLayer || hitGroundLayer)) //맞은 애가 적이거나 땅이야?
         {
             isFlying = false; //일단 나는건 멈춰
             maincollider.isTrigger = true; // 맞는 판정은 이제 필요없어
             rigid.linearVelocityX = 0;
-            if (layer == enemyMask.value) // 적이 맞은거야?
+            Debug.Log($"[Stick] OnCollisionStay2D hit {collision.gameObject.name} (enemy:{hitEnemyLayer} ground:{hitGroundLayer})");
+            if (hitEnemyLayer) // 적이 맞은거야?
             {
                 hitEnemy = true; // 적이 맞았다고 상태를 정하자
                 hittedEnemy = collision.gameObject;
                 Enemyscript = hittedEnemy.GetComponent<enemy>();
-                Enemyscript.Death();
+                if (Enemyscript != null)
+                {
+                    Debug.Log($"[Stick] -> calling enemy.Death() on {hittedEnemy.name}");
+                    Enemyscript.Death();
+                }
+                else
+                {
+                    // enemy 타입이 아닐 경우(예: 보스 스크립트) 다른 스크립트를 참조하여 처리
+                    var boss = hittedEnemy.GetComponent<FloatingLibrary>();
+                    if (boss != null)
+                    {
+                        Debug.Log($"[Stick] -> calling FloatingLibrary.Death() on {hittedEnemy.name}");
+                        boss.Death();
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[Stick] hit object {hittedEnemy.name} is in enemyMask but has no enemy or FloatingLibrary script.");
+                    }
+                }
                 rigid.gravityScale = 1;
             }
-            else if (layer == groundMask.value) // 땅이 맞은거야?
+                else if (hitGroundLayer) // 땅이 맞은거야?
             {
                 hitGround = true; // 땅이 맞았다고 상태를 정하자
             }

@@ -34,15 +34,17 @@ public class CutsceneController : MonoBehaviour
     /// <param name="duration">이동 시간(초)</param>
     private void MovePlayer(float distance, float duration)
     {
-        // 여러 가능한 이름으로 플레이어를 찾음
+        // 여러 가능한 이름/태그으로 플레이어를 찾음 (우선 'JK')
         Transform player = GameObject.Find("TempPlayer")?.transform;
         if (player == null) player = GameObject.Find("tempPlayer")?.transform;
+        if (player == null) player = GameObject.Find("JK")?.transform;
         if (player == null) player = GameObject.Find("Player")?.transform;
+        if (player == null) player = GameObject.FindGameObjectWithTag("JK")?.transform;
         if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.transform;
         
         if (player == null)
         {
-            Debug.LogError("플레이어를 찾을 수 없습니다! (TempPlayer, tempPlayer, Player 또는 Player 태그)");
+            Debug.LogError("플레이어를 찾을 수 없습니다! (TempPlayer, tempPlayer, JK, Player 또는 JK/Player 태그)");
             return;
         }
 

@@ -97,7 +97,7 @@ public class DialogueTrigger : MonoBehaviour
     #region 트리거 이벤트 메서드들
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("JK"))
         {
             HandlePlayerEnter(other.gameObject);
         }
@@ -105,7 +105,7 @@ public class DialogueTrigger : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("JK"))
         {
             HandlePlayerExit(other.gameObject);
         }
@@ -113,7 +113,7 @@ public class DialogueTrigger : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("JK"))
         {
             HandlePlayerEnter(other.gameObject);
         }
@@ -121,7 +121,7 @@ public class DialogueTrigger : MonoBehaviour
     
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("JK"))
         {
             HandlePlayerExit(other.gameObject);
         }
