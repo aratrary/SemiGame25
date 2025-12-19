@@ -361,8 +361,8 @@ public class DialogueSystem : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // 대화가 활성화되어 있고 P키가 눌렸을 때만 처리
-        if (dialogueActive && Input.GetKeyDown(KeyCode.P))
+        // 대화가 활성화되어 있고 스페이스바가 눌렸을 때만 처리
+        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             HandleSpacebarInput();
         }
